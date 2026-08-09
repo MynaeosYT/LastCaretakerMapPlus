@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Caretaker Map Plus</title>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>THE LAST C<span>⋀</span>RETAKER MAP PLUS</h1>
+            <!-- <p>Explore locations across the world</p> -->
+        </header>
+        
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <h2>Map Contents</h2>
+                <button id="settings-button" class="settings-button" title="Settings">⚙️</button>
+            </div>
+            <div class="search-box">
+                <div class="search-input-container">
+                    <input type="text" id="location-search" placeholder="Search locations..." />
+                    <button id="clear-search" class="clear-search" title="Clear search">✕</button>
+                </div>
+                <div class="search-options">
+                    <label class="search-option-toggle">
+                        <input type="checkbox" id="search-all-text">
+                        <span>Search all location text</span>
+                    </label>
+                </div>
+            </div>
+            <section class="sidebar-group" data-sidebar-group="legend" data-default-expanded="false">
+                <button type="button" class="sidebar-group-header" aria-expanded="false"><span><strong>Legend</strong><small>Marker symbols and states</small></span><span class="sidebar-group-chevron">▶</span></button>
+                <div class="sidebar-group-content" hidden><div class="map-legend">
+                    <div><span class="legend-symbol legend-poi"></span><span><strong>Location</strong><small>Original POI marker</small></span></div>
+                    <div><span class="legend-symbol sample-marker sample-category-holo_memory"><span>H</span></span><span><strong>Sample</strong><small>Holo Memory or painting</small></span></div>
+                    <div><span class="legend-symbol paint-marker"><span class="paint-can-glyph"></span></span><span><strong>Paint Scheme</strong><small>Paint cans and progress</small></span></div>
+                    <div><span class="legend-symbol quest-marker"><span class="quest-start-glyph"></span></span><span><strong>Quest Start</strong><small>Optional starting point</small></span></div>
+                    <div><span class="legend-symbol quest-marker is-objective"><span>•</span></span><span><strong>Quest Objective</strong><small>Optional relevant POI</small></span></div>
+                    <div><span class="legend-symbol world-event-marker"><span class="whale-glyph"></span></span><span><strong>World Event</strong><small>Project Jonah whale</small></span></div>
+                    <div><span class="legend-symbol secret-marker"><span class="keyhole-glyph"></span></span><span><strong>Secret</strong><small>Hidden or gated area</small></span></div>
+                    <div><span class="legend-precision exact"></span><span><strong>Solid border</strong><small>Exact community coordinate</small></span></div>
+                    <div><span class="legend-precision poi"></span><span><strong>Dashed border</strong><small>POI or search-area anchor</small></span></div>
+                    <div><span class="legend-status">✓</span><span><strong>Status badge</strong><small>Visited, found, or completed</small></span></div>
+                </div></div>
+            </section>
+            <section class="sidebar-group" data-sidebar-group="locations" data-default-expanded="true">
+                <button type="button" class="sidebar-group-header" aria-expanded="true"><span><strong>Locations</strong><small>POIs, caves and stations</small></span><span class="sidebar-group-chevron">▼</span></button>
+                <div class="sidebar-group-content">
+                    <div id="location-controls" aria-label="Location filters">
+                        <div class="location-control-title"><strong>Locations</strong><span>Visibility and marker display</span></div>
+                        <div class="location-filters">
+                            <label><input type="checkbox" id="show-hidden-locations"><span>Show hidden locations</span></label>
+                            <label><input type="checkbox" id="show-last-listener"><span>Show Last Listener locations</span></label>
+                            <label><input type="checkbox" id="show-caves"><span>Show caves</span></label>
+                            <label><input type="checkbox" id="show-primary-numbers"><span>Display primary numbers</span></label>
+                            <label><input type="checkbox" id="show-visit-overlays" checked><span>Show visit status badges</span></label>
+                        </div>
+                    </div>
+                    <div id="location-list"></div>
+                </div>
+            </section>
+            <section class="sidebar-group" data-sidebar-group="collectibles" data-default-expanded="false">
+                <button type="button" class="sidebar-group-header" aria-expanded="false"><span><strong>Collectibles</strong><small>Samples and Paint Schemes</small></span><span class="sidebar-group-chevron">▶</span></button>
+                <div class="sidebar-group-content" hidden><div id="sample-controls" aria-label="Sample filters"></div><div id="sample-list"></div><div id="paint-controls" aria-label="Paint scheme filters"></div><div id="paint-list"></div></div>
+            </section>
+            <section class="sidebar-group" data-sidebar-group="activities" data-default-expanded="false">
+                <button type="button" class="sidebar-group-header" aria-expanded="false"><span><strong>Activities</strong><small>Quests and World Events</small></span><span class="sidebar-group-chevron">▶</span></button>
+                <div class="sidebar-group-content" hidden><div id="quest-controls" aria-label="Quest filters"></div><div id="quest-list"></div><div id="world-event-controls" aria-label="World event filters"></div><div id="world-event-list"></div></div>
+            </section>
+            <section class="sidebar-group" data-sidebar-group="secrets" data-default-expanded="false">
+                <button type="button" class="sidebar-group-header" aria-expanded="false"><span><strong>Secrets</strong><small>Hidden and gated areas</small></span><span class="sidebar-group-chevron">▶</span></button>
+                <div class="sidebar-group-content" hidden><div id="secret-controls" aria-label="Secret filters"></div><div id="secret-list"></div></div>
+            </section>
+        </div>
+
+        <!-- Settings Popup -->
+        <div id="settings-popup" class="settings-popup">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h3>Settings</h3>
+                    <button id="close-settings" class="close-button" title="Close settings" aria-label="Close settings">✕</button>
+                </div>
+                <div class="settings-body">
+                    <h4 class="settings-section-title">Data &amp; Backup</h4>
+                    <div class="setting-item">
+                        <button id="clear-data-button" class="setting-button">Clear local data</button>
+                        <p class="setting-description">Reset all preferences. Export your data first.</p>
+                    </div>
+                    <div class="setting-item">
+                        <div style="display: flex; gap: 8px;">
+                            <button id="export-data-button" class="setting-button" style="background: #2196F3; border-color: #2196F3; flex: 1;">Export data</button>
+                            <button id="import-data-button" class="setting-button" style="background: #4CAF50; border-color: #4CAF50; flex: 1;">Import data</button>
+                        </div>
+                        <p class="setting-description">Backup or restore all your preferences and notes</p>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                    </div>
+                    <h4 class="settings-section-title">Map Appearance</h4>
+                    <div class="setting-item">
+                        <label class="setting-toggle">
+                            <input type="checkbox" id="use-solid-background">
+                            <span>Use solid color background</span>
+                        </label>
+                        <p class="setting-description">Replace the background map image with a solid color</p>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                            <label for="background-color" style="color: #ccc; font-size: 13px; white-space: nowrap;">Background color:</label>
+                            <input type="color" id="background-color" value="#17531b" style="width: 50px; height: 32px; border: 1px solid #555; border-radius: 4px; cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <h4 class="color-section-title">Marker Colors</h4>
+                        <p class="setting-description" style="margin-bottom: 12px;">Customize label colors per marker type</p>
+                        <div id="marker-color-settings" class="marker-color-grid"></div>
+                        <div class="color-buttons-row">
+                            <button id="reset-colors-button" class="setting-button reset-colors-button">Reset to defaults</button>
+                            <button id="all-white-button" class="setting-button reset-colors-button">All white</button>
+                        </div>
+                    </div>
+                    <h4 class="settings-section-title">About &amp; Credits</h4>
+                    <div class="setting-item about-credits">
+                        <p>
+                            Unofficial fan project for
+                            <a href="https://thelastcaretaker.com/" target="_blank" rel="noopener noreferrer">The Last Caretaker</a>,
+                            a game by
+                            <a href="https://www.channel37.co/" target="_blank" rel="noopener noreferrer">Channel37</a>.
+                        </p>
+                        <p class="about-disclaimer">Not affiliated with or endorsed by Channel37.</p>
+                        <p class="about-permission">In-game map/POI icons used with permission from Channel37.</p>
+                        <dl>
+                            <div><dt>Original map</dt><dd><a href="https://github.com/the1killer/LastCaretakerMap" target="_blank" rel="noopener noreferrer">The1Killer</a></dd></div>
+                            <div><dt>Plus edition</dt><dd><a href="https://www.youtube.com/@mynaeos" target="_blank" rel="noopener noreferrer">Mynaeos</a></dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="map">
+            <div id="version-panel">
+                v%VERSION% · Original by <a href="https://github.com/the1killer/" target="_blank" rel="noopener noreferrer">The1Killer</a> · Plus by <a href="https://www.youtube.com/@mynaeos" target="_blank" rel="noopener noreferrer">Mynaeos</a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Custom JS -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

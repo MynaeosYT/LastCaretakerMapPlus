@@ -1,0 +1,27 @@
+{
+  "name": "lastcaretakermap-plus",
+  "version": "1.0.0",
+  "description": "Extended local edition of The Last Caretaker Map",
+  "private": true,
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate:samples": "node scripts/validate-samples.mjs src/data/samples.json",
+    "validate:paints": "node scripts/validate-paints.mjs src/data/paint_schemes.json",
+    "validate:quests": "node scripts/validate-quests.mjs src/data/quests.json src/data/world_events.json",
+    "validate:secrets": "node scripts/validate-secrets.mjs src/data/secrets.json"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.97.1",
+    "vite": "^7.2.4"
+  }
+}

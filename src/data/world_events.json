@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "game": "The Last Caretaker",
+  "generatedAt": "2026-08-07",
+  "eventCount": 3,
+  "events": [
+    {
+      "id": "event-project-jonah-whale-omega",
+      "name": "Project Jonah Oil Whale – Omega Nursery",
+      "eventType": "oil_whale_spawn",
+      "relatedQuestId": "quest-project-jonah",
+      "unlockCondition": {
+        "type": "quest_complete",
+        "questId": "quest-project-jonah"
+      },
+      "suggestedVisibilityRule": "show_after_unlock",
+      "locationName": "Omega Nursery / Shark Pens – east side",
+      "longitude": 90,
+      "latitude": 6,
+      "coordinatePrecision": "poi",
+      "spawnTrigger": "proximity",
+      "reportedActivationDistanceMeters": null,
+      "publicSpawnReliability": "strong-first-whale",
+      "userProvidedPositionModel": "fixed",
+      "notes": [
+        "The first whale is strongly associated with the Omega Nursery / shark pens after Project Jonah.",
+        "The marker uses the Platform Omega POI anchor because no reliable exact whale coordinate was recovered.",
+        "Community reports place the surfacing area just east of the shark pens / near the largest nursery pen."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.com/news/2026-06-25-the-last-caretaker-launches-update-5-new-horizons-new-progression-paths-exploration-systems-tools-storyline-and-major-improvements/",
+        "https://www.neoseeker.com/the-last-caretaker/Project_Jonah",
+        "https://steamcommunity.com/app/1783560/discussions/0/572668858640376924/"
+      ]
+    },
+    {
+      "id": "event-project-jonah-whale-50-1",
+      "name": "Project Jonah Oil Whale – 50:1",
+      "eventType": "oil_whale_spawn",
+      "relatedQuestId": "quest-project-jonah",
+      "unlockCondition": {
+        "type": "quest_complete",
+        "questId": "quest-project-jonah"
+      },
+      "suggestedVisibilityRule": "show_after_unlock",
+      "locationName": "Between Refuel Outpost Gamma and Helios Reserve Orion",
+      "longitude": 50,
+      "latitude": 1,
+      "coordinatePrecision": "exact-community",
+      "spawnTrigger": "proximity",
+      "reportedActivationDistanceMeters": 15,
+      "publicSpawnReliability": "community-variable",
+      "userProvidedPositionModel": "fixed",
+      "notes": [
+        "Multiple Steam players independently report 50:1.",
+        "One report says the whale did not appear until the player was within roughly 15 meters.",
+        "Some completed saves report no additional whale at this point; preserve this as an Early Access spawn/reliability warning."
+      ],
+      "sourceUrls": [
+        "https://steamcommunity.com/app/1783560/discussions/0/572668858640376924/"
+      ]
+    },
+    {
+      "id": "event-project-jonah-whale-118-38",
+      "name": "Project Jonah Oil Whale – 118:38",
+      "eventType": "oil_whale_spawn",
+      "relatedQuestId": "quest-project-jonah",
+      "unlockCondition": {
+        "type": "quest_complete",
+        "questId": "quest-project-jonah"
+      },
+      "suggestedVisibilityRule": "show_after_unlock",
+      "locationName": "Community-reported third Jonah encounter",
+      "longitude": 118,
+      "latitude": 38,
+      "coordinatePrecision": "exact-community",
+      "spawnTrigger": "proximity",
+      "reportedActivationDistanceMeters": null,
+      "publicSpawnReliability": "community-variable",
+      "userProvidedPositionModel": "fixed",
+      "notes": [
+        "Steam post edited on 24 July 2026 lists the three known areas as shark pens just east, 50:1, and 118:38.",
+        "Other players in the same thread report seeing fewer whales, so the coordinate is stored but the spawn is flagged as variable in Early Access.",
+        "Do not transpose this coordinate to 38:118; the current edited Steam post reads 118:38."
+      ],
+      "sourceUrls": [
+        "https://steamcommunity.com/app/1783560/discussions/0/572668858640376924/"
+      ]
+    }
+  ],
+  "designRecommendation": {
+    "relationship": "quest-unlocked-world-events",
+    "defaultBehavior": "Hide Jonah whale markers until Project Jonah is marked complete; optionally offer a 'Show locked world events' override.",
+    "reason": "The whale locations remain useful after the quest and behave like persistent/repeatable world resources rather than quest steps."
+  }
+}

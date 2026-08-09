@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The Last Caretaker world events",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "game",
+    "eventCount",
+    "events"
+  ],
+  "properties": {
+    "eventCount": {
+      "type": "integer",
+      "const": 3
+    },
+    "events": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    }
+  }
+}

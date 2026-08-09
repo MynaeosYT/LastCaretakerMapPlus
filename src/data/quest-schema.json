@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The Last Caretaker quest dataset",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "game",
+    "wikiIndexQuestCount",
+    "recordCount",
+    "quests"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "game": {
+      "type": "string",
+      "const": "The Last Caretaker"
+    },
+    "wikiIndexQuestCount": {
+      "type": "integer",
+      "const": 43
+    },
+    "quests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "indexStatus",
+          "triggerType",
+          "prerequisiteQuests",
+          "startLocations",
+          "objectiveLocations",
+          "mapUseful",
+          "suggestedDefaultMapVisibility",
+          "confidence",
+          "playerVerified",
+          "notes",
+          "sourceUrls"
+        ]
+      }
+    }
+  }
+}

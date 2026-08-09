@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "The Last Caretaker paint schemes",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "game",
+    "generatedAt",
+    "schemeCount",
+    "unlockRule",
+    "schemes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "game": {
+      "type": "string",
+      "const": "The Last Caretaker"
+    },
+    "schemeCount": {
+      "type": "integer",
+      "const": 37
+    },
+    "schemes": {
+      "type": "array",
+      "minItems": 37,
+      "maxItems": 37,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "unlockRequired",
+          "lootable",
+          "wikiAmountFound",
+          "individualPositionsStatus",
+          "locations",
+          "cans",
+          "notes",
+          "sourceUrls"
+        ]
+      }
+    }
+  }
+}

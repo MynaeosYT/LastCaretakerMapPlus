@@ -1,0 +1,2911 @@
+{
+  "schemaVersion": 1,
+  "game": "The Last Caretaker",
+  "generatedAt": "2026-08-07",
+  "datasetStatus": "community-compiled",
+  "schemeCount": 37,
+  "unlockRule": {
+    "cansRequired": 4,
+    "description": "Applying at least four cans of the same scheme unlocks crafting of that paint with Paint Pigment."
+  },
+  "wikiAmountFoundTotal": 190,
+  "documentedPlacementRecords": 185,
+  "documentedPhysicalQuantity": 186,
+  "excludedNonLootableTestPaints": [
+    {
+      "name": "Jesus paint 1",
+      "reason": "Community datamine reports it as test-only and not lootable."
+    },
+    {
+      "name": "Pink Paint",
+      "reason": "Community datamine reports it as test-only and not lootable."
+    }
+  ],
+  "precisionMeaning": {
+    "exact": "Concrete coordinate published for this individual can.",
+    "poi": "Marker uses the associated POI anchor; use positionNote to find the can inside/on the POI.",
+    "approximate": "Area anchor only; not an individual can coordinate."
+  },
+  "schemes": [
+    {
+      "id": "paint-abyss-hands",
+      "name": "Abyss Hands",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "positionNote": "Cross the broken catwalk; the can is below the first platform."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station, between the PECO and Vitality areas."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "positionNote": "South end of the catwalk one level below the power station."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "positionNote": "Lower level of the middle room."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Draco",
+          "longitude": 63,
+          "latitude": -63,
+          "coordinatePrecision": "poi",
+          "positionNote": "Left of the stairs at the solar/wind platform."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Abyss_Hands",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-ammonite",
+      "name": "Ammonite",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 7,
+      "reportedPhysicalCount": 7,
+      "individualPositionsStatus": "exact-community-coordinates",
+      "locations": [
+        {
+          "name": "Unnamed spires around the Quarantine Stacks",
+          "relatedLocations": [
+            "Quarantine Stack Amen"
+          ],
+          "longitude": 150,
+          "latitude": -38,
+          "coordinatePrecision": "approximate",
+          "note": "Area anchor only; all seven cans below have their own coordinates."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 151,
+          "latitude": -33,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a platform around the spire."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 154,
+          "latitude": -35,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a platform around the spire."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 152,
+          "latitude": -36,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a small metal plate."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 143,
+          "latitude": -38,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a small metal structure."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -34,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a small metal structure."
+        },
+        {
+          "canId": "can-6",
+          "canNumber": 6,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 150,
+          "latitude": -42,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a small metal structure near boat height."
+        },
+        {
+          "canId": "can-7",
+          "canNumber": 7,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147.2,
+          "latitude": -41.6,
+          "coordinatePrecision": "exact",
+          "positionNote": "Unnamed islet with a small metal structure near boat height."
+        }
+      ],
+      "notes": [
+        "This is the strongest paint dataset: all seven cans have explicit community coordinates."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Ammonite",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-beat-tag",
+      "name": "Beat Tag",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the power-station/elevator structure."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station near the top elevator, below the power control."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "positionNote": "In the hidden/secret space beside the top elevator."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the upper radio-control room."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the top of the tower, opposite the stair corner."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Beat_Tag",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-bubble-octo",
+      "name": "Bubble Octo",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the container stack."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside on the bottom level, south-east corner."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "positionNote": "Level 3, east side, by the container with a wooden panel."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside on top of a blue container on the east side."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 04-7",
+          "longitude": 83,
+          "latitude": -15,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside/on the open red container near the top."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Bubble_Octo",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-captain-giggle",
+      "name": "Captain Giggle",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "One level below the power station, north side of the central ladder."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same lower level, behind the railing on the north side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same lower level, south-west corner."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same lower level, south-east corner."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same lower level, north-west corner behind scrap."
+        }
+      ],
+      "notes": [
+        "The current wiki descriptions for these five positions are unusually similar to Catalan Modernisme. They are presented as POI-level community data."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Captain_Giggle",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-catalan-modernisme",
+      "name": "Catalan Modernisme",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "positionNote": "One level below the power station, north side of the central ladder."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same level, north side behind the railing."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same level, south-west corner."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same level, south-east corner."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Lyra",
+          "longitude": 121,
+          "latitude": 29,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same level, north-west corner behind scrap."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Catalan_Modernisme",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-checker-run",
+      "name": "Checker Run",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": "5-6",
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "positionNote": "South-east side of the middle building, beside the petrol tank."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station, left of the door."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 2,
+          "locationName": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the middle building, left corner; multiple players report two cans at this same spot."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the middle building near the bowling area."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Gamma",
+          "longitude": 48,
+          "latitude": -6,
+          "coordinatePrecision": "poi",
+          "positionNote": "On fixed crates at the west end of the platform."
+        }
+      ],
+      "notes": [
+        "The master wiki lists 5*; the individual page says multiple users reported two cans at Can #3. Treat the sixth as a possible duplicate/spawn quirk."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Checker_Run",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-confuse-the-sea",
+      "name": "Confuse The Sea",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside the main entrance, left from the dock, behind stacked fixed crates."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "positionNote": "Near the dock on the upper level, right side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-east corner of the main building, lower level."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside the power-station building, south-east corner."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "positionNote": "In the pit, front-left when viewed from the dock."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Confuse_The_Sea",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-dead-mark",
+      "name": "Dead Mark",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the room below the wind-turbine deck, far-left corner."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "positionNote": "Same room, lower level, below the stairs."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station, lower level under the stairs."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the power station, outside the broken grate on the catwalk."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Gemini",
+          "longitude": 61,
+          "latitude": -26,
+          "coordinatePrecision": "poi",
+          "positionNote": "North end of the main platform, east side beneath the solar/turbine structure."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Dead_Mark",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-drowned-city",
+      "name": "Drowned City",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-side catwalk below the helipad."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof of the power building."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "Ground floor of the power building."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "South-side catwalk near the petrol/diesel tanks, one level below the main deck."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "Corridor just above the stairs from the oil-pump room."
+        }
+      ],
+      "notes": [
+        "The master list marks this amount with an asterisk, but the individual wiki page documents five distinct placements."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Drowned_City",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-exo-standard",
+      "name": "EXO Standard",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "positionNote": "Last ladder step before reaching the top of the elevator shaft in the living area."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the dock, up the stairs beside the boat."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the dock edge near the medium battery."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "positionNote": "Up the main stairs, on the corner table just before the roof exit."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Sanctuary Dock 37",
+          "longitude": 12,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the small ladder hut with the kickable ladder."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/EXO_Standard",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-exodus-stamp",
+      "name": "Exodus Stamp",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 6,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station next to the power switch/connector."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "South side at bridge level near a maroon container."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside a grey container on the left side of the bridge from the entrance facility."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "West side near white/blue fixed crates beside an oil tank."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the rocket platform."
+        },
+        {
+          "canId": "can-6",
+          "canNumber": 6,
+          "quantityAtSpot": 1,
+          "locationName": "Exodus Station",
+          "longitude": 126,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the short light tower at the north-east corner of the central platform."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Exodus_Stamp",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-goofy-fins",
+      "name": "Goofy Fins",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": 5,
+      "individualPositionsStatus": "scheme-only",
+      "locations": [
+        {
+          "name": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [],
+      "notes": [
+        "Navigation Beacon 32 and a total of 5 cans are confirmed by the current master list and Steam.",
+        "The five individual placements were not reliably retrievable from public indexed sources on 2026-08-07; do not invent them."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Goofy_Fins",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-high-volt",
+      "name": "High Volt",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the power station on the small dock pylon."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the main power-station building."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the antenna platform above the stairs."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "positionNote": "Across the jump section below the power station on the main platform."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "The Last Listener Station",
+          "longitude": 116,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the top elevator platform outside the entrance to the main platform."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/High_Volt",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-ink-strip",
+      "name": "Ink Strip",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 4,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the large arch at roof level."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the end of a support beam left of the stairs/elevator."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside on the north-east side, on a ledge above the broken sign, slightly above boat height."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "On a support beam in the outer shell; climb from the dock elevator area and follow the upper structure toward Hall of Humanity."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Ink_Strip",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-krakon",
+      "name": "Krakon",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the cage at the bottom."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the metal platform on the south-east side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the hut below the radio."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "positionNote": "Outside the hut underneath the roof."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "positionNote": "At water level on the north-east side."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Krakon",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-last-circus",
+      "name": "Last Circus",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "positionNote": "Second level, south side, inside a blue container."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "positionNote": "Second level, outside on the south side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "positionNote": "Third level, south side, just inside a red container."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level, on a red container in the north-west corner."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 01-2.5",
+          "longitude": 69,
+          "latitude": -78,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the small platform below the lower deck."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Last_Circus",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-last-leaf",
+      "name": "Last Leaf",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "positionNote": "North side, on top of the blue container marked 05."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-east corner on top of a blue container."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "positionNote": "South-east corner by/on a yellow container."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "positionNote": "South-west corner by/on a yellow container."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 14-7",
+          "longitude": 105,
+          "latitude": 50,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-west quadrant, south-east corner near a red container and railing."
+        }
+      ],
+      "notes": [
+        "The original map names this POI 'Habitat Node 21-7' although its gameid is HabitatNode14. Search aliases should support both."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Last_Leaf",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-leaf-wall",
+      "name": "Leaf Wall",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 6,
+      "reportedPhysicalCount": 6,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Quarantine Stack Chorus",
+          "longitude": 147,
+          "latitude": -32,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        },
+        {
+          "name": "Quarantine Stack Aurora",
+          "longitude": 160,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        },
+        {
+          "name": "Quarantine Stack Dawn",
+          "longitude": 150,
+          "latitude": -46,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Chorus",
+          "longitude": 147,
+          "latitude": -32,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the hut with the Triode."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Chorus",
+          "longitude": 147,
+          "latitude": -32,
+          "coordinatePrecision": "poi",
+          "positionNote": "Beside the tank structure on the east side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Aurora",
+          "longitude": 160,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "On a metal ledge around boat height."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Aurora",
+          "longitude": 160,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the hut containing the Triode."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Dawn",
+          "longitude": 150,
+          "latitude": -46,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside a cage at water level on the south-west side."
+        },
+        {
+          "canId": "can-6",
+          "canNumber": 6,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Dawn",
+          "longitude": 150,
+          "latitude": -46,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the top of the tower on the north side."
+        }
+      ],
+      "notes": [
+        "This paint is intentionally split across three POIs."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Leaf_Wall",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-night-shift",
+      "name": "Night Shift",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 6,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Lower level on the west side, below FARHT signage/area."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside a red container on level 2, roughly level with the '5' marking."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Second tower, open red container on the north side."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level on the south-west pillar, by a blue container with crates in front."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Northern tower, top level, south-east corner."
+        },
+        {
+          "canId": "can-6",
+          "canNumber": 6,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 05-14.5",
+          "longitude": 92,
+          "latitude": -57,
+          "coordinatePrecision": "poi",
+          "positionNote": "Northern tower, inside a red/blue container left of its opening."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Night_Shift",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-north-home",
+      "name": "North Home",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 6,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "East side of the platform beside a yellow ladder."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-side yellow container; enter from the west and take the right-most container."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the top of the ladder on the east side of the platform."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "South side, on top of a yellow container."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "West side, inside the entrance of a yellow container."
+        },
+        {
+          "canId": "can-6",
+          "canNumber": 6,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 09-4",
+          "longitude": 83,
+          "latitude": 16,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level, south-west corner, in/on a red container."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/North_Home",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-old-flag",
+      "name": "Old Flag",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "positionNote": "On a shelf inside a side-opening container."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the bottom of a yellow container just before the bridge to the west end."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "positionNote": "Upper level, north-west area, under the stairs."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside red containers on the upper level, behind a yellow ladder."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "positionNote": "East end, below the flag."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Old_Flag",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-outer-rim",
+      "name": "Outer Rim",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "positionNote": "At the dock on the south-east tower."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof, south side, behind the sign."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the hidden outside ledge by the power point, south side."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "positionNote": "Beside the power connection."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Nomads Tower",
+          "longitude": 75,
+          "latitude": -31,
+          "coordinatePrecision": "poi",
+          "positionNote": "In the same room as the power station, in a corner."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Outer_Rim",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-patrol",
+      "name": "Patrol",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Power-station level, outside on the ledge left of the double doors on the south side."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Between the two yellow extensions to the right of the power station."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "Hidden area in the south-west corner at power-station level."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "On a ledge below power-station level on the east side."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 15",
+          "longitude": 70,
+          "latitude": -53,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the roof of the power-station building, south-east side."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Patrol",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-pink-bone",
+      "name": "Pink Bone",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "positionNote": "Power room beside the PECO terminal."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level, north-west corner, under the red pipe."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level, inside the house/building."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "positionNote": "Hidden room in Building 23 at deck level on the west side."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Refuel Outpost Theta",
+          "longitude": 85,
+          "latitude": -45,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top platform, east side, beside a yellow fixed crate."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Pink_Bone",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-playtime",
+      "name": "Playtime",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station near the power equipment."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "positionNote": "Between a yellow container and a concrete block on the east side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-west corner."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "positionNote": "Upper catwalk, north-east corner."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 38-98",
+          "longitude": 9,
+          "latitude": -37,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the locked door/room, right side."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Playtime",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-rexwreck",
+      "name": "Rexwreck",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Hall of Humanity level, right side of the inner door from the dock."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Hall of Humanity level, south door from inside the hall, beside a fixed crate."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Water-pump level, outside the south double doors, to the right."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Water-pump level, near the west-facing double doors after the small raised platform."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the stairs in the outer shell, just after the ladder jump on the west side."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Rexwreck",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-rust-tag",
+      "name": "Rust Tag",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "First hut, on the roof-support strut."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the hut with a hole in the floor on the north-east side."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the roof of the power hut at the top of the stack."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the cage at the bottom of the cave."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Quarantine Stack Amen",
+          "longitude": 147,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the roof of an east-side building reached after the broken catwalk and ladder route."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Rust_Tag",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-salt-bloom",
+      "name": "Salt Bloom",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Food-processor room, far-left corner."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Food-processor room, near the couch in the far-right corner."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Food-processor room, left of the steps leading up to the processor."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Food-processor room, inside the glassed area beside the processor steps."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Food-processor room, storage room behind the first row of shelves."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Salt_Bloom",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-sea-dragon",
+      "name": "Sea Dragon",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Dock, left side."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Lower dock, in/by the container on the right."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Beside the door leading to the power connection."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Beside the yellow FAHR container at the rear of the power-station level."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Beside a blue container just up the ramp from the dock."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Sea_Dragon",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-sea-raid",
+      "name": "Sea Raid",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power station, far-left corner."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Behind the power station beside the metal building."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof area, under the metal house on the south side."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof area, beneath the metal buildings on the north side."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the light pole at the north-east corner of the roof."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Sea_Raid",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-senyera-run",
+      "name": "Senyera Run",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the building on the east side."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "positionNote": "North side, at the building corner below the platform."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the top container at the dock, near Broken Angel."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the power building on the bottom shelf."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Helios Reserve Orion",
+          "longitude": 54,
+          "latitude": 9,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the steel building below the platform, right side."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Senyera_Run",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-shapes-only",
+      "name": "Shapes Only",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "positionNote": "Inside the open blue container to the left of the plaza."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "positionNote": "West side behind a blue container."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-west corner where blue containers meet."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "positionNote": "North-east corner of the lower platform."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 08-16",
+          "longitude": 131,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "positionNote": "Behind the wooden structure at the end of the yellow container by the plaza."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Shapes_Only",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-sunburst-panel",
+      "name": "Sunburst Panel",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "South-west corner of the power-station roof."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the building opposite the power station, north side near ventilation."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "Below the Eternal Flame beside the power station."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "First platform on the oil tower itself, south side."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Black Vein Station",
+          "longitude": 50,
+          "latitude": -70,
+          "coordinatePrecision": "poi",
+          "positionNote": "In the kitchen area of the building opposite the power station, upper floor."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Sunburst_Panel",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-tide-girl",
+      "name": "Tide Girl",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof corner at the radio tower, toward the power station."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof, left side of the power station when viewed from its door."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof, near the metal house opposite the power station, behind the solar panels."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof, near the metal house beside the wind turbines."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Lazarus Complex",
+          "longitude": 70,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof, north-west corner of the radio building."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Tide_Girl",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-tricolor-run",
+      "name": "Tricolor Run",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "positionNote": "Below the basketball hoop on the left side."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "positionNote": "On top of the blue container far right from the dock."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "positionNote": "Left-side blue container near the shiny trash can."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "positionNote": "Top level on the left, at the opening of a blue container."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Habitat Node 06-3.5",
+          "longitude": 24,
+          "latitude": 4,
+          "coordinatePrecision": "poi",
+          "positionNote": "Bottom level on the right beside a shelf."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/Tricolor_Run",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    },
+    {
+      "id": "paint-vhs-wave",
+      "name": "VHS Wave",
+      "unlockRequired": 4,
+      "lootable": true,
+      "wikiAmountFound": 5,
+      "reportedPhysicalCount": null,
+      "individualPositionsStatus": "documented",
+      "locations": [
+        {
+          "name": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor from The1Killer map; individual can position is described textually."
+        }
+      ],
+      "cans": [
+        {
+          "canId": "can-1",
+          "canNumber": 1,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Bottom room with the dark slime."
+        },
+        {
+          "canId": "can-2",
+          "canNumber": 2,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "Roof of the power building."
+        },
+        {
+          "canId": "can-3",
+          "canNumber": 3,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "On a ledge far right from the dock."
+        },
+        {
+          "canId": "can-4",
+          "canNumber": 4,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the roof behind the building; climb up near Can #3."
+        },
+        {
+          "canId": "can-5",
+          "canNumber": 5,
+          "quantityAtSpot": 1,
+          "locationName": "Navigation Beacon 49",
+          "longitude": 34,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "positionNote": "On the beam above the door just inside the room beside the power station."
+        }
+      ],
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Paint_Cans",
+        "https://thelastcaretaker.wiki.gg/wiki/VHS_Wave",
+        "https://github.com/the1killer/LastCaretakerMap/blob/main/src/data/locations.json",
+        "https://steamcommunity.com/app/1783560/discussions/0/765184781366349955/"
+      ]
+    }
+  ]
+}

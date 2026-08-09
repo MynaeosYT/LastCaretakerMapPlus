@@ -1,0 +1,420 @@
+import {
+    refreshDisplay,
+    applyVisitOverlayVisibility,
+    toggleBackgroundLayer,
+    locations,
+    hiddenLocations,
+    lastListenerLocations,
+    caves
+} from './main.js';
+
+// Default marker colors per type
+const defaultMarkerColors = {
+    Hanger: '#ffffff',
+    NavBeacon: '#ffffff',
+    Rocket: '#ffffff',
+    RefuelOutpost: '#aa232f',
+    HeliosReserve: '#AB5024',
+    Habitat: '#1C86E6',
+    RockySpire: '#A67E3D',
+    Maze: '#A67E3D',
+    Ruin: '#000000',
+    NDNS: '#555555',
+    Cave: '#8A1CE6',
+    SeedVault: '#1CE2E6',
+    Lazarus: '#ffffff',
+    OilRig: '#ffffff',
+    SharkBay: '#E61CE6',
+    StarChild: '#E61CE6',
+    RollerFactory: '#E61CE6',
+    GyroPlatform: '#ff9900',
+    Silo: '#ff9900',
+    "StatueSpire": '#CCCCCC',
+    "Eden": '#ffffff',
+    "Lab": '#4eaad4'
+};
+
+// Plus feature state shared by export, import, and local-data reset.
+const PLUS_STORAGE_KEYS = [
+    'tlc-sample-status-v1',
+    'tlc-sample-filters-v1',
+    'tlc-sample-category-v1-holo_memory',
+    'tlc-sample-category-v1-cave_painting',
+    'tlc-sample-category-v1-rock_painting',
+    'tlc-paint-status-v1',
+    'tlc-paint-filters-v1',
+    'tlc-quest-status-v1',
+    'tlc-quest-filters-v1',
+    'tlc-secret-status-v1',
+    'tlc-secret-reveal-v1',
+    'tlc-secret-filters-v1',
+    'tlc-sidebar-group-v1-legend',
+    'tlc-sidebar-group-v1-locations',
+    'tlc-sidebar-group-v1-collectibles',
+    'tlc-sidebar-group-v1-activities',
+    'tlc-sidebar-group-v1-secrets'
+];
+
+// Friendly display names for types
+const typeDisplayNames = {
+    Hanger: 'Hangars',
+    NavBeacon: 'Nav Beacons',
+    Rocket: 'Rocket',
+    RefuelOutpost: 'Fuel',
+    HeliosReserve: 'Solar',
+    Habitat: 'Habitat',
+    RockySpire: 'Rockyspire',
+    Maze: 'Maze',
+    Ruin: 'Ruin',
+    NDNS: 'NDNS',
+    Cave: 'Cave',
+    SeedVault: 'Seed Vault',
+    Lazarus: 'Lazarus',
+    OilRig: 'Oil Rig',
+    SharkBay: 'Shark Bay',
+    StarChild: 'Star Child',
+    RollerFactory: 'Roller Factory',
+    GyroPlatform: 'Gyro Platform',
+    Silo: 'Silo'
+};
+
+// Get the marker color for a given type, checking user overrides first
+export function getMarkerColor(type) {
+    const userColor = localStorage.getItem(`marker-color-${type}`);
+    if (userColor && /^#[0-9a-f]{6}$/i.test(userColor)) return userColor;
+    return defaultMarkerColors[type] || '#ffffff';
+}
+
+// Settings popup functionality
+const settingsPopup = document.getElementById('settings-popup');
+const settingsButton = document.getElementById('settings-button');
+const closeSettingsButton = document.getElementById('close-settings');
+const clearDataButton = document.getElementById('clear-data-button');
+const showHiddenCheckbox = document.getElementById('show-hidden-locations');
+const showLastListenerCheckbox = document.getElementById('show-last-listener');
+const showCavesCheckbox = document.getElementById('show-caves');
+const showPrimaryNumbersCheckbox = document.getElementById('show-primary-numbers');
+const showVisitOverlaysCheckbox = document.getElementById('show-visit-overlays');
+const useSolidBackgroundCheckbox = document.getElementById('use-solid-background');
+const backgroundColorPicker = document.getElementById('background-color');
+
+// Open settings popup
+settingsButton.addEventListener('click', () => {
+    settingsPopup.classList.add('active');
+    // Load current settings state
+    loadSettingsState();
+});
+
+// Close settings popup
+closeSettingsButton.addEventListener('click', () => {
+    settingsPopup.classList.remove('active');
+});
+
+// Close popup when clicking outside
+settingsPopup.addEventListener('click', (e) => {
+    if (e.target === settingsPopup) {
+        settingsPopup.classList.remove('active');
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsPopup.classList.contains('active')) {
+        settingsPopup.classList.remove('active');
+    }
+});
+
+// Clear local data
+clearDataButton.addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear all local data? This will reset all visibility preferences.')) {
+        // Clear all marker visibility states for all location types
+        const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
+        allLocations.forEach(location => {
+            localStorage.removeItem(`marker-visible-${location.id}`);
+        });
+
+        // Clear category visibility states
+        localStorage.removeItem('category-visible-main-locations');
+        localStorage.removeItem('category-visible-hidden-locations');
+        localStorage.removeItem('category-visible-last-listener-locations');
+        localStorage.removeItem('category-visible-caves-locations');
+
+        // Clear settings
+        localStorage.removeItem('show-hidden-locations');
+        localStorage.removeItem('show-last-listener');
+        localStorage.removeItem('show-caves');
+        localStorage.removeItem('show-primary-numbers');
+        localStorage.removeItem('show-visit-overlays');
+        localStorage.removeItem('use-solid-background');
+        localStorage.removeItem('background-color');
+        PLUS_STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
+
+        // Clear all visit states
+        allLocations.forEach(location => {
+            localStorage.removeItem(`location-visit-${location.id}`);
+        });
+
+        // Clear marker color settings
+        Object.keys(defaultMarkerColors).forEach(type => {
+            localStorage.removeItem(`marker-color-${type}`);
+        });
+
+        // Reload the page to reset everything
+        window.location.reload();
+    }
+});
+
+// Load settings state from localStorage
+function loadSettingsState() {
+    const showHidden = localStorage.getItem('show-hidden-locations') === 'true';
+    const showLastListener = localStorage.getItem('show-last-listener') === 'true';
+    const showCaves = localStorage.getItem('show-caves') === 'true';
+    const showPrimaryNumbers = localStorage.getItem('show-primary-numbers') === 'true';
+    const showVisitOverlays = localStorage.getItem('show-visit-overlays') !== 'false';
+    const useSolidBackground = localStorage.getItem('use-solid-background') === 'true';
+    const backgroundColor = localStorage.getItem('background-color') || '#17531b';
+
+    showHiddenCheckbox.checked = showHidden;
+    showLastListenerCheckbox.checked = showLastListener;
+    showCavesCheckbox.checked = showCaves;
+    showPrimaryNumbersCheckbox.checked = showPrimaryNumbers;
+    showVisitOverlaysCheckbox.checked = showVisitOverlays;
+    useSolidBackgroundCheckbox.checked = useSolidBackground;
+    backgroundColorPicker.value = backgroundColor;
+
+    // Populate marker color pickers
+    populateColorSettings();
+}
+
+// Save settings state to localStorage
+function saveSettingsState() {
+    localStorage.setItem('show-hidden-locations', showHiddenCheckbox.checked);
+    localStorage.setItem('show-last-listener', showLastListenerCheckbox.checked);
+    localStorage.setItem('show-caves', showCavesCheckbox.checked);
+    localStorage.setItem('show-primary-numbers', showPrimaryNumbersCheckbox.checked);
+    localStorage.setItem('show-visit-overlays', showVisitOverlaysCheckbox.checked);
+    localStorage.setItem('use-solid-background', useSolidBackgroundCheckbox.checked);
+    localStorage.setItem('background-color', backgroundColorPicker.value);
+}
+
+// Handle show hidden locations toggle
+showHiddenCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    refreshDisplay();
+});
+
+// Handle show last listener locations toggle
+showLastListenerCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    refreshDisplay();
+});
+
+// Handle show caves toggle
+showCavesCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    refreshDisplay();
+});
+
+// Handle display primary numbers toggle
+showPrimaryNumbersCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    refreshDisplay();
+});
+
+// Handle show visit overlays toggle (no full refresh needed, just apply CSS class)
+showVisitOverlaysCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    applyVisitOverlayVisibility();
+});
+
+// Handle use solid background toggle
+useSolidBackgroundCheckbox.addEventListener('change', () => {
+    saveSettingsState();
+    applyBackgroundStyle();
+});
+
+// Handle background color change
+backgroundColorPicker.addEventListener('input', () => {
+    saveSettingsState();
+    applyBackgroundStyle();
+});
+
+// Apply background style based on settings
+function applyBackgroundStyle() {
+    const useSolid = localStorage.getItem('use-solid-background') === 'true';
+    const bgColor = localStorage.getItem('background-color') || '#17531b';
+    const mapElement = document.getElementById('map');
+
+    if (useSolid) {
+        mapElement.style.background = bgColor;
+        toggleBackgroundLayer(false); // Hide the background image layer
+    } else {
+        mapElement.style.background = '#000000';
+        toggleBackgroundLayer(true); // Show the background image layer
+    }
+}
+
+// Populate marker color settings grid
+function populateColorSettings() {
+    const container = document.getElementById('marker-color-settings');
+    if (!container) return;
+    container.innerHTML = '';
+
+    Object.keys(defaultMarkerColors).forEach(type => {
+        const currentColor = getMarkerColor(type);
+        const row = document.createElement('div');
+        row.className = 'color-setting-row';
+        row.innerHTML = `
+            <label for="color-${type}">${typeDisplayNames[type] || type}</label>
+            <input type="color" id="color-${type}" value="${currentColor}" data-type="${type}">
+        `;
+        container.appendChild(row);
+
+        const input = row.querySelector(`#color-${type}`);
+        input.addEventListener('input', (e) => {
+            localStorage.setItem(`marker-color-${type}`, e.target.value);
+            refreshDisplay();
+        });
+    });
+}
+
+// Reset colors to defaults
+const resetColorsButton = document.getElementById('reset-colors-button');
+if (resetColorsButton) {
+    resetColorsButton.addEventListener('click', () => {
+        Object.keys(defaultMarkerColors).forEach(type => {
+            localStorage.removeItem(`marker-color-${type}`);
+        });
+        populateColorSettings();
+        refreshDisplay();
+    });
+}
+
+// Set all colors to white
+const allWhiteButton = document.getElementById('all-white-button');
+if (allWhiteButton) {
+    allWhiteButton.addEventListener('click', () => {
+        Object.keys(defaultMarkerColors).forEach(type => {
+            localStorage.setItem(`marker-color-${type}`, '#ffffff');
+        });
+        populateColorSettings();
+        refreshDisplay();
+    });
+}
+
+// Export data
+const exportDataButton = document.getElementById('export-data-button');
+if (exportDataButton) {
+    exportDataButton.addEventListener('click', () => {
+        try {
+            const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
+            const dataToExport = {};
+
+            // Export all location-specific data
+            allLocations.forEach(location => {
+                dataToExport[`marker-visible-${location.id}`] = localStorage.getItem(`marker-visible-${location.id}`);
+                dataToExport[`location-visit-${location.id}`] = localStorage.getItem(`location-visit-${location.id}`);
+                dataToExport[`location-notes-${location.id}`] = localStorage.getItem(`location-notes-${location.id}`);
+            });
+
+            // Export category visibility states
+            dataToExport['category-visible-main-locations'] = localStorage.getItem('category-visible-main-locations');
+            dataToExport['category-visible-hidden-locations'] = localStorage.getItem('category-visible-hidden-locations');
+            dataToExport['category-visible-last-listener-locations'] = localStorage.getItem('category-visible-last-listener-locations');
+            dataToExport['category-visible-caves-locations'] = localStorage.getItem('category-visible-caves-locations');
+
+            // Export settings
+            dataToExport['show-hidden-locations'] = localStorage.getItem('show-hidden-locations');
+            dataToExport['show-last-listener'] = localStorage.getItem('show-last-listener');
+            dataToExport['show-caves'] = localStorage.getItem('show-caves');
+            dataToExport['show-primary-numbers'] = localStorage.getItem('show-primary-numbers');
+            dataToExport['show-visit-overlays'] = localStorage.getItem('show-visit-overlays');
+            dataToExport['use-solid-background'] = localStorage.getItem('use-solid-background');
+            dataToExport['background-color'] = localStorage.getItem('background-color');
+            PLUS_STORAGE_KEYS.forEach(key => {
+                dataToExport[key] = localStorage.getItem(key);
+            });
+
+            // Export marker colors
+            Object.keys(defaultMarkerColors).forEach(type => {
+                const color = localStorage.getItem(`marker-color-${type}`);
+                if (color) {
+                    dataToExport[`marker-color-${type}`] = color;
+                }
+            });
+
+            // Create and download JSON file
+            const dataStr = JSON.stringify(dataToExport, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `caretaker-map-data-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+        } catch (err) {
+            console.error('Export error:', err);
+            alert('Error exporting data. Check console for details.');
+        }
+    });
+}
+
+// Import data
+const importDataButton = document.getElementById('import-data-button');
+const importFileInput = document.getElementById('import-file-input');
+if (importDataButton && importFileInput) {
+    importDataButton.addEventListener('click', () => {
+        importFileInput.click();
+    });
+
+    importFileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const importedData = JSON.parse(event.target.result);
+
+                if (confirm('Import data? This will overwrite your current preferences.')) {
+                    // Clear existing data first
+                    const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
+                    allLocations.forEach(location => {
+                        localStorage.removeItem(`marker-visible-${location.id}`);
+                        localStorage.removeItem(`location-visit-${location.id}`);
+                        localStorage.removeItem(`location-notes-${location.id}`);
+                    });
+
+                    Object.keys(defaultMarkerColors).forEach(type => {
+                        localStorage.removeItem(`marker-color-${type}`);
+                    });
+
+                    // Prevent states absent from an older backup from leaking into the restored profile.
+                    PLUS_STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
+
+                    // Import all data
+                    Object.keys(importedData).forEach(key => {
+                        if (importedData[key] !== null) {
+                            localStorage.setItem(key, importedData[key]);
+                        }
+                    });
+
+                    window.location.reload();
+                }
+            } catch (err) {
+                console.error('Import error:', err);
+                alert('Error importing data. Please check the file format.');
+            }
+        };
+        reader.readAsText(file);
+
+        // Reset the input so the same file can be imported again
+        importFileInput.value = '';
+    });
+}
+
+// Apply background style on page load (delayed to ensure proper initialization)
+requestAnimationFrame(() => applyBackgroundStyle());

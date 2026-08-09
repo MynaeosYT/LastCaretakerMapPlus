@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Paint can">
+  <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 9h14l-1.2 18H10.2L9 9Zm-1-3h16v4H8V6Zm4-2h8"/>
+  <path fill="currentColor" d="M12 14h8v7h-8z"/>
+  <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M11 8c0 6 10 6 10 0"/>
+</svg>

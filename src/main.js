@@ -1,0 +1,824 @@
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import './styles.scss';
+
+import { getMarkerColor } from './settings.js'
+
+import locationData from './data/locations.json';
+import locationTypes from './data/types.json';
+import { initSamples } from './samples.js';
+import { initPaints } from './paints.js';
+import { initQuests } from './quests.js';
+import { initSecrets } from './secrets.js';
+import { LOCATION_VISIBILITY_EVENT } from './location-visibility.js';
+
+// Initialize the map
+const map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: -2,
+    maxZoom: 6,
+    zoomSnap: 0.5,
+    zoomControl: false
+});
+
+window.map = map; // Expose map for debugging
+
+// Set the view based on the coordinate system
+map.setView([30, 0], 0);
+
+// Create a tiled background image layer
+const BackgroundLayer = L.GridLayer.extend({
+    createTile: function(coords) {
+        const tile = document.createElement('img');
+        tile.src = './images/mapbg.png';
+        tile.style.width = '100%';
+        tile.style.height = '100%';
+        tile.style.imageRendering = 'pixelated'; // Better performance for pixel art
+        return tile;
+    }
+});
+
+// Add tiled background layer
+let backgroundLayer = new BackgroundLayer().addTo(map);
+
+// Export function to toggle background layer visibility
+export function toggleBackgroundLayer(visible) {
+    if (visible) {
+        if (!backgroundLayer || !map.hasLayer(backgroundLayer)) {
+            backgroundLayer = new BackgroundLayer().addTo(map);
+        }
+    } else {
+        if (backgroundLayer && map.hasLayer(backgroundLayer)) {
+            map.removeLayer(backgroundLayer);
+        }
+    }
+}
+
+// Create a custom grid overlay with fixed size
+const GridLayer = L.GridLayer.extend({
+    createTile: function(coords) {
+        const tile = document.createElement('canvas');
+        const tileSize = this.getTileSize();
+        tile.width = tileSize.x;
+        tile.height = tileSize.y;
+
+        const ctx = tile.getContext('2d');
+
+        // Draw grid with transparency
+        ctx.strokeStyle = '#333333';
+        ctx.lineWidth = 1;
+
+        var gridsize = 64;
+
+        // Draw vertical lines
+        for (let i = 0; i <= tileSize.x; i += gridsize) {
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, tileSize.y);
+            ctx.stroke();
+        }
+
+        // Draw horizontal lines
+        for (let i = 0; i <= tileSize.y; i += gridsize) {
+            ctx.beginPath();
+            ctx.moveTo(0, i);
+            ctx.lineTo(tileSize.x, i);
+            ctx.stroke();
+        }
+
+        return tile;
+    }
+});
+
+// Add grid layer on top of the background with updateWhenIdle enabled for better performance
+new GridLayer({
+    updateWhenZooming: false,
+    updateWhenIdle: true
+}).addTo(map);
+
+// Store markers for easy access
+const markers = {};
+const markerLabels = {};
+const radarCircles = {};
+
+let selectedMarkerId = null;
+let searchQuery = '';
+let searchAllText = false;
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
+export const locations = locationData.locations;
+export const hiddenLocations = locationData.hiddenLocations;
+export const lastListenerLocations = locationData.lastListenerLocations;
+export const caves = locationData.caves;
+
+// Load visibility state from localStorage
+function getVisibilityState(locationId) {
+    const state = localStorage.getItem(`marker-visible-${locationId}`);
+    return state === null ? true : state === 'true';
+}
+
+// Save visibility state to localStorage
+function setVisibilityState(locationId, visible) {
+    localStorage.setItem(`marker-visible-${locationId}`, visible);
+
+}
+
+// --- Visit state (not-visited / visited / cleared) ---
+const VISIT_STATES = ['not-visited', 'visited', 'cleared'];
+const VISIT_ICONS  = { 'not-visited': '☐', 'visited': '✔', 'cleared': '✔' }; //✅
+const VISIT_LABELS = { 'not-visited': 'Not visited', 'visited': 'Visited', 'cleared': 'Cleared' };
+
+function getVisitState(locationId) {
+    const state = localStorage.getItem(`location-visit-${locationId}`);
+    return VISIT_STATES.includes(state) ? state : 'not-visited';
+}
+
+function setVisitState(locationId, state) {
+    localStorage.setItem(`location-visit-${locationId}`, state);
+}
+
+function cycleVisitState(locationId) {
+    const current = getVisitState(locationId);
+    const next = VISIT_STATES[(VISIT_STATES.indexOf(current) + 1) % VISIT_STATES.length];
+    setVisitState(locationId, next);
+    return next;
+}
+
+// Update the visit overlay badge on a map marker's icon element
+function updateMarkerVisitOverlay(locationId, state) {
+    const marker = markers[locationId];
+    if (!marker) return;
+    const el = marker.getElement();
+    if (!el) return;
+    const overlay = el.querySelector('.visit-overlay');
+    if (overlay) overlay.dataset.state = state;
+}
+
+// Update the visit icon in the sidebar row
+function updateSidebarVisitIcon(locationId, state) {
+    const icon = document.getElementById(`sidebar-visit-${locationId}`);
+    if (icon) icon.dataset.state = state;
+}
+
+// Apply/remove the hide-visit-overlays class from the map container
+export function applyVisitOverlayVisibility() {
+    const show = localStorage.getItem('show-visit-overlays') !== 'false';
+    document.getElementById('map').classList.toggle('hide-visit-overlays', !show);
+}
+
+// --- End visit state ---
+
+// Get category visibility state from localStorage
+function getCategoryVisibilityState(categoryId) {
+    const state = localStorage.getItem(`category-visible-${categoryId}`);
+    return state === null ? true : state === 'true';
+}
+
+// Save category visibility state to localStorage
+function setCategoryVisibilityState(categoryId, visible) {
+    localStorage.setItem(`category-visible-${categoryId}`, visible);
+}
+
+// Toggle all markers in a category
+function toggleCategoryVisibility(categoryId, locations) {
+    const currentState = getCategoryVisibilityState(categoryId);
+    const newState = !currentState;
+    
+    // Update all markers in this category
+    locations.forEach(location => {
+        const marker = markers[location.id];
+        const label = markerLabels[location.id];
+        const radarCircle = radarCircles[location.id];
+        
+        if (marker) {
+            if (newState) {
+                marker.addTo(map);
+                if (label) label.addTo(map);
+                if (radarCircle) radarCircle.addTo(map);
+            } else {
+                map.removeLayer(marker);
+                if (label) map.removeLayer(label);
+                if (radarCircle) map.removeLayer(radarCircle);
+            }
+        }
+        
+        // Update individual marker state
+        setVisibilityState(location.id, newState);
+        updateToggleButton(location.id, newState);
+    });
+    
+    // Save category state
+    setCategoryVisibilityState(categoryId, newState);
+    updateCategoryToggleButton(categoryId, newState);
+}
+
+// Update category toggle button appearance
+function updateCategoryToggleButton(categoryId, visible) {
+    const button = document.getElementById(`category-toggle-${categoryId}`);
+    if (button) {
+        button.dataset.visible = visible;
+        button.title = visible ? 'Hide all markers in category' : 'Show all markers in category';
+        button.setAttribute('aria-label', button.title);
+    }
+}
+
+// Toggle marker visibility
+function toggleMarkerVisibility(locationId) {
+    const marker = markers[locationId];
+    const label = markerLabels[locationId];
+    const radarCircle = radarCircles[locationId];
+    const currentState = getVisibilityState(locationId);
+    const newState = !currentState;
+    
+    if (marker) {
+        if (newState) {
+            marker.addTo(map);
+            if (label) label.addTo(map);
+            if (radarCircle) radarCircle.addTo(map);
+        } else {
+            map.removeLayer(marker);
+            if (label) map.removeLayer(label);
+            if (radarCircle) map.removeLayer(radarCircle);
+        }
+    }
+    
+    setVisibilityState(locationId, newState);
+    updateToggleButton(locationId, newState);
+}
+
+// Update toggle button appearance
+function updateToggleButton(locationId, visible) {
+    const button = document.getElementById(`toggle-${locationId}`);
+    if (button) {
+        button.dataset.visible = visible;
+        button.title = visible ? 'Hide marker' : 'Show marker';
+        button.setAttribute('aria-label', button.title);
+    }
+}
+
+// Function to create custom icon for each location
+const iconCache = {};
+function clearIconCache() {
+    Object.keys(iconCache).forEach(key => delete iconCache[key]);
+}
+function createCustomIcon(locationType, locationCategory = 'regular') {
+    const color = getMarkerColor(locationType);
+    const cacheKey = `${locationCategory}_${color}`;
+    iconCache[locationType] = iconCache[locationType] || {};
+    if (iconCache[locationType][cacheKey]) {
+        return iconCache[locationType][cacheKey];
+    }
+
+    const extraClass = locationCategory === 'lastListener' ? ' marker-icon-last-listener' : '';
+    const isBlack = color.toLowerCase() === '#000000' || color.toLowerCase() === 'black';
+    const outlineClass = isBlack ? ' no-outline' : '';
+    const icon = L.divIcon({
+        className: `colored-marker-icon${extraClass}${outlineClass}`,
+        html: `<div class="marker-icon-inner" style="background-color: ${color}; -webkit-mask-image: url('./images/${locationTypes[locationType]}'); mask-image: url('./images/${locationTypes[locationType]}');"></div><div class="visit-overlay" data-state="not-visited"></div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -50]
+    });
+
+    iconCache[locationType][cacheKey] = icon;
+
+    return icon;
+}
+
+// Setup search functionality
+function setupSearch() {
+    const searchInput = document.getElementById('location-search');
+    const clearButton = document.getElementById('clear-search');
+    const searchOptions = document.querySelector('.search-options');
+    const searchAllCheckbox = document.getElementById('search-all-text');
+    
+    // Show/hide search options on focus/blur
+    searchInput.addEventListener('focus', () => {
+        searchOptions.classList.add('visible');
+    });
+    
+    searchInput.addEventListener('blur', () => {
+        // Delay to allow checkbox click to register
+        setTimeout(() => {
+            if (!searchAllCheckbox.matches(':focus')) {
+                searchOptions.classList.remove('visible');
+            }
+        }, 150);
+    });
+    
+    // Keep options visible when interacting with checkbox
+    searchOptions.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+    });
+    
+    searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        clearButton.style.display = searchQuery ? 'block' : 'none';
+        displayLocationSections();
+    });
+    
+    clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearButton.style.display = 'none';
+        displayLocationSections();
+    });
+    
+    searchAllCheckbox.addEventListener('change', (e) => {
+        searchAllText = e.target.checked;
+        if (searchQuery) {
+            displayLocationSections();
+        }
+    });
+}
+
+// Filter locations based on search query
+function filterLocations(locations) {
+    if (!searchQuery) return locations;
+    return locations.filter(location => {
+        const nameMatch = location.name.toLowerCase().includes(searchQuery);
+        if (!searchAllText) {
+            return nameMatch;
+        }
+        const descriptionMatch = location.description && location.description.toLowerCase().includes(searchQuery);
+        return nameMatch || descriptionMatch;
+    });
+}
+
+// Refresh the display based on current settings
+export function refreshDisplay() {
+    // Clear existing markers
+    Object.values(markers).forEach(marker => map.removeLayer(marker));
+    Object.values(markerLabels).forEach(label => map.removeLayer(label));
+    Object.values(radarCircles).forEach(circle => map.removeLayer(circle));
+    
+    // Clear marker references
+    Object.keys(markers).forEach(key => delete markers[key]);
+    Object.keys(markerLabels).forEach(key => delete markerLabels[key]);
+    Object.keys(radarCircles).forEach(key => delete radarCircles[key]);
+    clearIconCache();
+    
+    // Get current settings
+    const showHidden = localStorage.getItem('show-hidden-locations') === 'true';
+    const showLastListener = localStorage.getItem('show-last-listener') === 'true';
+    const showCaves = localStorage.getItem('show-caves') === 'true';
+    
+    // Display sections based on settings
+    displayLocationSections();
+    
+    // Add markers for enabled location types
+    addMarkersToMap(locations, 'regular');
+    
+    if (showHidden) {
+        addMarkersToMap(hiddenLocations, 'hidden');
+    }
+    
+    if (showLastListener) {
+        addMarkersToMap(lastListenerLocations, 'lastListener');
+    }
+    
+    if (showCaves) {
+        addMarkersToMap(caves, 'caves');
+    }
+    
+    // Apply visit overlay visibility setting
+    applyVisitOverlayVisibility();
+    window.dispatchEvent(new CustomEvent(LOCATION_VISIBILITY_EVENT));
+
+    // Fit map to show all visible markers
+    const visibleLocations = [locations];
+    if (showHidden) visibleLocations.push(hiddenLocations);
+    if (showLastListener) visibleLocations.push(lastListenerLocations);
+    if (showCaves) visibleLocations.push(caves);
+    
+    const allLocations = visibleLocations.flat();
+    if (allLocations.length > 0) {
+        const bounds = L.latLngBounds(allLocations.map(loc => [-loc.latitude, loc.longitude]));
+        map.fitBounds(bounds, { padding: [50, 50] });
+    }
+}
+
+// Add markers to the map
+function addMarkersToMap(locations, locationCategory = 'regular') {
+    locations.forEach(location => {
+        const isVisible = getVisibilityState(location.id);
+        const showPrimaryNumbers = localStorage.getItem('show-primary-numbers') === 'true';
+        const primaryNumber = location.primaryNumber || location.primaryNumbers;
+        const useNumberIcon = showPrimaryNumbers && primaryNumber;
+        const iconColor = getMarkerColor(location.type);
+        const markerIcon = useNumberIcon
+            ? L.divIcon({
+                className: 'number-marker-icon',
+                html: `
+                    <div class="number-marker">
+                        <div class="marker-icon-inner" style="background-color: ${iconColor}; -webkit-mask-image: url('./images/${locationTypes[location.type]}'); mask-image: url('./images/${locationTypes[location.type]}');"></div>
+                        <span class="number-marker-number">${escapeHtml(primaryNumber)}</span>
+                        <div class="visit-overlay" data-state="not-visited"></div>
+                    </div>
+                `,
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -50]
+            })
+            : createCustomIcon(location.type, locationCategory);
+        
+        const marker = L.marker([-location.latitude, location.longitude], {
+            icon: markerIcon
+        });
+        
+        // Add text label above marker
+        const labelColor = getMarkerColor(location.type);
+        const noShadow = labelColor.toLowerCase() === '#000000' || labelColor.toLowerCase() === 'black' ? ' no-shadow' : '';
+        const labelIcon = L.divIcon({
+            className: 'marker-label',
+            html: `<div class="marker-label-text${noShadow}" style="color: ${labelColor}">${escapeHtml(location.name)}</div>`,
+            iconSize: [200, 30],
+            iconAnchor: [100, 60]
+        });
+        
+        const label = L.marker([-location.latitude, location.longitude], {
+            icon: labelIcon,
+            interactive: false
+        });
+        
+        // Add radar circle if radarRadius is specified
+        let radarCircle = null;
+        if (location.radarRadius) {
+            radarCircle = L.circle([-location.latitude + 1, location.longitude], {
+                radius: location.radarRadius,
+                color: '#CC00CC',
+                fillColor: '#CC00CC',
+                fillOpacity: 0,
+                weight: 2,
+                opacity: 0.5
+            });
+        }
+        
+        // Update visit overlay whenever the marker element is added to the DOM
+        marker.on('add', () => {
+            const el = marker.getElement();
+            if (!el) return;
+            const overlay = el.querySelector('.visit-overlay');
+            if (overlay) overlay.dataset.state = getVisitState(location.id);
+        });
+
+        // Only add to map if visible
+        if (isVisible) {
+            marker.addTo(map);
+            label.addTo(map);
+            if (radarCircle) radarCircle.addTo(map);
+        }
+        
+        // Create popup content (generated dynamically so visit state is always fresh)
+        const primaryNum = location.primaryNumber || location.primaryNumbers;
+        const secondaryNum = location.secondaryNumber || location.secondaryNumbers;
+        marker.bindPopup(() => {
+            const state = getVisitState(location.id);
+            const notes = localStorage.getItem(`location-notes-${location.id}`) || '';
+            return `
+                <div class="popup-content">
+                    <h3>${escapeHtml(location.name)}</h3>
+                    <p>${escapeHtml(location.description)}</p>
+                    ${primaryNum ? `<p><strong>Primary #:</strong> ${escapeHtml(primaryNum)}</p>` : ''}
+                    ${secondaryNum ? `<p><strong>Secondary #:</strong> ${escapeHtml(secondaryNum)}</p>` : ''}
+                    <p><strong>Coordinates:</strong> ${escapeHtml(location.longitude)} : ${escapeHtml(location.latitude)}</p>
+                    <button class="visit-status-btn" data-location-id="${escapeHtml(location.id)}" data-state="${state}">
+                        <span class="visit-icon">${VISIT_ICONS[state]}</span>
+                        <span class="visit-text">${VISIT_LABELS[state]}</span>
+                    </button>
+                    <div class="notes-section">
+                        <label for="notes-${escapeHtml(location.id)}">Notes:</label>
+                        <textarea id="notes-${escapeHtml(location.id)}" class="location-notes" data-location-id="${escapeHtml(location.id)}" placeholder="Add your notes here...">${escapeHtml(notes)}</textarea>
+                    </div>
+                    <p><small class="locid">(id: ${escapeHtml(location.id)})&nbsp;&nbsp;(gameid: ${escapeHtml(location.gameid)})</small></p>
+                </div>
+            `;
+        });
+
+        // Bind visit-status button click after popup opens
+        marker.on('popupopen', (e) => {
+            const btn = e.popup.getElement().querySelector('.visit-status-btn');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const newState = cycleVisitState(location.id);
+                    btn.dataset.state = newState;
+                    btn.querySelector('.visit-icon').textContent = VISIT_ICONS[newState];
+                    btn.querySelector('.visit-text').textContent = VISIT_LABELS[newState];
+                    updateMarkerVisitOverlay(location.id, newState);
+                    updateSidebarVisitIcon(location.id, newState);
+                });
+            }
+
+            // Setup notes textarea
+            const notesTextarea = e.popup.getElement().querySelector('.location-notes');
+            if (notesTextarea) {
+                notesTextarea.addEventListener('input', () => {
+                    localStorage.setItem(`location-notes-${location.id}`, notesTextarea.value);
+                    // Auto-grow the textarea
+                    notesTextarea.style.height = 'auto';
+                    notesTextarea.style.height = notesTextarea.scrollHeight + 'px';
+                });
+
+                // Initial height calculation
+                notesTextarea.style.height = 'auto';
+                notesTextarea.style.height = notesTextarea.scrollHeight + 'px';
+            }
+        });
+
+        // Store marker, label, and radar circle references
+        markers[location.id] = marker;
+        markerLabels[location.id] = label;
+        if (radarCircle) radarCircles[location.id] = radarCircle;
+        
+        // Add click event to highlight sidebar item and marker
+        marker.on('click', () => {
+            highlightLocation(location.id);
+            highlightMarker(location.id);
+        });
+    });
+}
+
+// Display location sections in sidebar
+function displayLocationSections() {
+    const locationList = document.getElementById('location-list');
+    locationList.innerHTML = '';
+    
+    // Get current settings
+    const showHidden = localStorage.getItem('show-hidden-locations') === 'true';
+    const showLastListener = localStorage.getItem('show-last-listener') === 'true';
+    const showCaves = localStorage.getItem('show-caves') === 'true';
+    
+    // Filter locations based on search query
+    const filteredLocations = filterLocations(locations);
+    const filteredHiddenLocations = filterLocations(hiddenLocations);
+    const filteredLastListenerLocations = filterLocations(lastListenerLocations);
+    const filteredCaves = filterLocations(caves);
+    
+    // Show message if no results
+    if (searchQuery && 
+        filteredLocations.length === 0 && 
+        filteredHiddenLocations.length === 0 && 
+        filteredLastListenerLocations.length === 0 && 
+        filteredCaves.length === 0) {
+        locationList.innerHTML = '<div class="no-results">No locations found</div>';
+        return;
+    }
+    
+    // Keep lists compact by default, but reveal matching items while searching.
+    const expandForSearch = Boolean(searchQuery);
+
+    // Create sections
+    if (filteredLocations.length > 0) {
+        const mainSection = createLocationSection('Locations', filteredLocations, 'main-locations', expandForSearch);
+        locationList.appendChild(mainSection);
+    }
+    
+    if (showHidden && filteredHiddenLocations.length > 0) {
+        const hiddenSection = createLocationSection('Hidden Locations', filteredHiddenLocations, 'hidden-locations', expandForSearch);
+        locationList.appendChild(hiddenSection);
+    }
+    
+    if (showLastListener && filteredLastListenerLocations.length > 0) {
+        const lastListenerSection = createLocationSection('Last Listener Locations', filteredLastListenerLocations, 'last-listener-locations', expandForSearch);
+        locationList.appendChild(lastListenerSection);
+    }
+    
+    if (showCaves && filteredCaves.length > 0) {
+        const cavesSection = createLocationSection('Caves', filteredCaves, 'caves-locations', expandForSearch);
+        locationList.appendChild(cavesSection);
+    }
+}
+
+// Create a collapsible location section
+function createLocationSection(title, locations, sectionId, isExpanded = false) {
+    const section = document.createElement('div');
+    section.className = 'location-section';
+    section.id = sectionId;
+    const categoryVisible = getCategoryVisibilityState(sectionId);
+    
+    // Create section header
+    const header = document.createElement('div');
+    header.className = 'section-header';
+    header.setAttribute('role', 'button');
+    header.setAttribute('tabindex', '0');
+    header.setAttribute('aria-expanded', String(isExpanded));
+    header.innerHTML = `
+        <div class="section-header-content">
+            <button class="toggle-visibility category-toggle" id="category-toggle-${sectionId}" data-visible="${categoryVisible}" title="${categoryVisible ? 'Hide all markers in category' : 'Show all markers in category'}" aria-label="${categoryVisible ? 'Hide all markers in category' : 'Show all markers in category'}"></button>
+            <h3> ${title} <span class="section-count">(${locations.length})</span></h3>
+        </div>
+        <span class="section-toggle">${isExpanded ? '▼' : '▶'}</span>
+    `;
+    
+    // Create section content
+    const content = document.createElement('div');
+    content.className = `section-content ${isExpanded ? 'expanded' : 'collapsed'}`;
+    
+    // Add locations to content
+    locations.forEach(location => {
+        const locationItem = createLocationItem(location);
+        content.appendChild(locationItem);
+    });
+    
+    const toggleSection = () => {
+        const isCurrentlyExpanded = content.classList.contains('expanded');
+        content.classList.toggle('expanded');
+        content.classList.toggle('collapsed');
+        header.querySelector('.section-toggle').textContent = isCurrentlyExpanded ? '▶' : '▼';
+        header.setAttribute('aria-expanded', String(!isCurrentlyExpanded));
+    };
+
+    // Toggle section expansion with pointer or keyboard.
+    header.addEventListener('click', (event) => {
+        if (event.target.closest('.category-toggle')) return;
+        toggleSection();
+    });
+    header.addEventListener('keydown', (event) => {
+        if (event.target.closest('.category-toggle') || !['Enter', ' '].includes(event.key)) return;
+        event.preventDefault();
+        toggleSection();
+    });
+
+    header.querySelector('.category-toggle').addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleCategoryVisibility(sectionId, locations);
+    });
+    
+    section.appendChild(header);
+    section.appendChild(content);
+    
+    return section;
+}
+
+// Create a location item
+function createLocationItem(location) {
+    const locationItem = document.createElement('div');
+    locationItem.className = 'location-item';
+    locationItem.id = `location-${location.id}`;
+    const isVisible = getVisibilityState(location.id);
+    const visitState = getVisitState(location.id);
+    
+    locationItem.innerHTML = `
+        <span class="sidebar-visit-icon" id="sidebar-visit-${location.id}" data-state="${visitState}"></span>
+        <div class="location-header">
+            <h3>${escapeHtml(location.name)}</h3>
+            <button class="toggle-visibility" id="toggle-${location.id}" data-visible="${isVisible}" title="${isVisible ? 'Hide marker' : 'Show marker'}" aria-label="${isVisible ? 'Hide marker' : 'Show marker'}"></button>
+        </div>
+        <!--<p>${location.description}</p>-->
+        <!--<div class="coordinates">📍 ${location.latitude}, ${location.longitude}</div>-->
+    `;
+    
+    // Add click event to zoom to marker (only on the item, not the button)
+    locationItem.addEventListener('click', (e) => {
+        if (e.target.closest('.toggle-visibility')) return;
+        const marker = markers[location.id];
+        if (marker && getVisibilityState(location.id)) {
+            map.setView([-location.latitude, location.longitude]);
+            marker.openPopup();
+            highlightLocation(location.id);
+            highlightMarker(location.id);
+        }
+    });
+
+    locationItem.querySelector('.toggle-visibility').addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMarkerVisibility(location.id);
+    });
+
+    updateToggleButton(location.id, isVisible);
+    
+    return locationItem;
+}
+
+// Highlight selected location in sidebar
+function highlightLocation(locationId) {
+    // Remove active class from all items
+    document.querySelectorAll('.location-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Add active class to selected item
+    const selectedItem = document.getElementById(`location-${locationId}`);
+    if (selectedItem) {
+        selectedItem.classList.add('active');
+        selectedItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// Highlight selected marker on map
+function highlightMarker(locationId) {
+    // Remove highlight from previously selected marker
+    if (selectedMarkerId !== null && markers[selectedMarkerId]) {
+        const prevMarker = markers[selectedMarkerId];
+        const prevIcon = prevMarker.getElement();
+        if (prevIcon) {
+            prevIcon.classList.remove('marker-selected');
+        }
+    }
+    
+    // Add highlight to newly selected marker
+    selectedMarkerId = locationId;
+    const marker = markers[locationId];
+    if (marker) {
+        const icon = marker.getElement();
+        if (icon) {
+            icon.classList.add('marker-selected');
+        }
+    }
+    updateHash();
+}
+
+// Initialize the application
+refreshDisplay();
+setupSearch();
+initSamples(map);
+initPaints(map);
+initQuests(map);
+initSecrets(map);
+setupSidebarGroups();
+
+function setupSidebarGroups() {
+    const storagePrefix = 'tlc-sidebar-group-v2-';
+    const groups = [...document.querySelectorAll('[data-sidebar-group]')];
+    const searchInput = document.getElementById('location-search');
+    const savedState = (group) => {
+        const saved = localStorage.getItem(`${storagePrefix}${group.dataset.sidebarGroup}`);
+        return saved === null ? group.dataset.defaultExpanded === 'true' : saved === 'true';
+    };
+    const showGroup = (group, expanded) => {
+        group.querySelector('.sidebar-group-header').setAttribute('aria-expanded', String(expanded));
+        group.querySelector('.sidebar-group-content').hidden = !expanded;
+        group.querySelector('.sidebar-group-chevron').textContent = expanded ? '▼' : '▶';
+    };
+    groups.forEach((group) => {
+        showGroup(group, savedState(group));
+        group.querySelector('.sidebar-group-header').addEventListener('click', () => {
+            const expanded = group.querySelector('.sidebar-group-header').getAttribute('aria-expanded') !== 'true';
+            localStorage.setItem(`${storagePrefix}${group.dataset.sidebarGroup}`, expanded);
+            showGroup(group, expanded);
+        });
+    });
+    searchInput.addEventListener('input', () => {
+        const searching = Boolean(searchInput.value.trim());
+        groups.forEach((group) => {
+            const isLegend = group.dataset.sidebarGroup === 'legend';
+            showGroup(group, searching && !isLegend ? true : savedState(group));
+        });
+    });
+}
+
+// --- URL Hash state ---
+function updateHash() {
+    const center = map.getCenter();
+    const zoom = map.getZoom();
+    const lat = center.lat.toFixed(4);
+    const lng = center.lng.toFixed(4);
+    const markerPart = selectedMarkerId != null ? `/${selectedMarkerId}` : '';
+    history.replaceState(null, '', `#${lat}/${lng}/${zoom}${markerPart}`);
+}
+
+function parseHash() {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return null;
+    const parts = hash.split('/');
+    if (parts.length < 3) return null;
+    const lat = parseFloat(parts[0]);
+    const lng = parseFloat(parts[1]);
+    const zoom = parseFloat(parts[2]);
+    const markerId = parts[3] != null ? parts[3] : null;
+    if (isNaN(lat) || isNaN(lng) || isNaN(zoom)) return null;
+    return { lat, lng, zoom, markerId };
+}
+
+map.on('moveend zoomend', updateHash);
+
+map.on('popupclose', () => {
+    if (selectedMarkerId !== null) {
+        const el = markers[selectedMarkerId]?.getElement();
+        if (el) el.classList.remove('marker-selected');
+    }
+    selectedMarkerId = null;
+    updateHash();
+});
+
+// Restore position/zoom/marker from hash on load
+const hashState = parseHash();
+if (hashState) {
+    map.setView([hashState.lat, hashState.lng], hashState.zoom);
+    if (hashState.markerId) {
+        const hashMarker = markers[hashState.markerId];
+        if (hashMarker) {
+            hashMarker.openPopup();
+            highlightLocation(hashState.markerId);
+            highlightMarker(hashState.markerId);
+        }
+    }
+}

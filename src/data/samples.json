@@ -1,0 +1,2027 @@
+{
+  "schemaVersion": 1,
+  "game": "The Last Caretaker",
+  "generatedAt": "2026-08-06",
+  "datasetStatus": "community-compiled",
+  "sampleCount": 104,
+  "categoryCounts": {
+    "holo_memory": 60,
+    "cave_painting": 15,
+    "rock_painting": 29
+  },
+  "notes": [
+    "Each entry is stored separately so samples can be searched and checked off individually.",
+    "coordinatePrecision=exact means a specific community coordinate.",
+    "coordinatePrecision=poi means the coordinate represents the find area, cave entrance, or map anchor, not necessarily the exact wall position.",
+    "coordinatePrecision=approximate means the coordinate is only a search anchor or community approximation.",
+    "The names of samples 051 and 059 could not be verified reliably and are marked as UNKNOWN."
+  ],
+  "samples": [
+    {
+      "id": "sample-013",
+      "sampleId": "013",
+      "name": "Last Shift",
+      "category": "holo_memory",
+      "locationName": "Black Vein Station",
+      "longitude": 50.0,
+      "latitude": -70.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Four samples are documented around Black Vein Station: at the elevator, office/save point, building roof, and main oil pump area. The available sources do not assign the four sample names to individual positions.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-014",
+      "sampleId": "014",
+      "name": "Still Pumping",
+      "category": "holo_memory",
+      "locationName": "Black Vein Station",
+      "longitude": 50.0,
+      "latitude": -70.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Four samples are documented around Black Vein Station: at the elevator, office/save point, building roof, and main oil pump area. The available sources do not assign the four sample names to individual positions.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-015",
+      "sampleId": "015",
+      "name": "Burner Light",
+      "category": "holo_memory",
+      "locationName": "Black Vein Station",
+      "longitude": 50.0,
+      "latitude": -70.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Four samples are documented around Black Vein Station: at the elevator, office/save point, building roof, and main oil pump area. The available sources do not assign the four sample names to individual positions.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-016",
+      "sampleId": "016",
+      "name": "Open Container",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 02-23",
+      "longitude": 48.0,
+      "latitude": -48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 02-23; one of three Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-017",
+      "sampleId": "017",
+      "name": "Ocean Funeral",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 01-2.5",
+      "longitude": 69.0,
+      "latitude": -78.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "On the first floor of the habitat building.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-018",
+      "sampleId": "018",
+      "name": "Numbered Door",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 02-23",
+      "longitude": 48.0,
+      "latitude": -48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 02-23; one of three Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-021",
+      "sampleId": "021",
+      "name": "Water Queue",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 08-16",
+      "longitude": 131.0,
+      "latitude": 21.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 08-16.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-022",
+      "sampleId": "022",
+      "name": "Bed on Wheels",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 03-12.3",
+      "longitude": 98.0,
+      "latitude": 15.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 03-12.3. Community note: the preview image in the sample menu appears to be incorrect.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-023",
+      "sampleId": "023",
+      "name": "Shared Blanket",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 05-14.5",
+      "longitude": 92.0,
+      "latitude": -57.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 05-14.5.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-024",
+      "sampleId": "024",
+      "name": "Carried Body",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 06-3.5",
+      "longitude": 24.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 06-3.5; one of four Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-025",
+      "sampleId": "025",
+      "name": "Thirsty Wait",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 03-12.3",
+      "longitude": 98.0,
+      "latitude": 15.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 03-12.3.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-027",
+      "sampleId": "027",
+      "name": "Ration Split",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 02-23",
+      "longitude": 48.0,
+      "latitude": -48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 02-23; one of three Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-029",
+      "sampleId": "029",
+      "name": "Hydroponic Check",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 01-2.5",
+      "longitude": 69.0,
+      "latitude": -78.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "On the second floor of the habitat building.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-034",
+      "sampleId": "034",
+      "name": "Haircut Corner",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 14-7 / Kartenname: Habitat Node 21-7",
+      "longitude": 105.0,
+      "latitude": 50.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 14-7. The original map project lists the same marker as Habitat Node 21-7.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [
+        "Habitat Node 21-7"
+      ],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-035",
+      "sampleId": "035",
+      "name": "Measuring Wall",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 06-3.5",
+      "longitude": 24.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 06-3.5; one of four Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-041",
+      "sampleId": "041",
+      "name": "Radio Call",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 14-7 / Kartenname: Habitat Node 21-7",
+      "longitude": 105.0,
+      "latitude": 50.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 14-7. The original map project lists the same marker as Habitat Node 21-7.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [
+        "Habitat Node 21-7"
+      ],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-042",
+      "sampleId": "042",
+      "name": "Signal Flag",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 14-7 / Kartenname: Habitat Node 21-7",
+      "longitude": 105.0,
+      "latitude": 50.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 14-7. The original map project lists the same marker as Habitat Node 21-7.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [
+        "Habitat Node 21-7"
+      ],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-043",
+      "sampleId": "043",
+      "name": "Passing Boat",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 06-3.5",
+      "longitude": 24.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 06-3.5; one of four Holo Memory finds at this POI.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-045",
+      "sampleId": "045",
+      "name": "Final Cast",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 10-4",
+      "longitude": 31.0,
+      "latitude": -31.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At hidden Habitat Node 10-4.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-046",
+      "sampleId": "046",
+      "name": "Dead Signal",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 01-2.5",
+      "longitude": 68.0,
+      "latitude": -78.0,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "Northwest of the northern silo, in the upper part of the habitat complex.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-050",
+      "sampleId": "050",
+      "name": "Retrieval",
+      "category": "holo_memory",
+      "locationName": "Seed Vault Prometheus",
+      "longitude": 82.0,
+      "latitude": -65.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the underwater entrance to the Seed Room.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-051",
+      "sampleId": "051",
+      "name": "UNKNOWN – Sample 051",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 09-4",
+      "longitude": 83.0,
+      "latitude": 16.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Community-reported find at Habitat Node 09-4. The available sources do not document the English in-game sample name.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "community_sample_051",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-052",
+      "sampleId": "052",
+      "name": "Inventory",
+      "category": "holo_memory",
+      "locationName": "Eden Cradle / Seed Eden",
+      "longitude": 167.0,
+      "latitude": 34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside a seed chamber.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-053",
+      "sampleId": "053",
+      "name": "Warm Shaft",
+      "category": "holo_memory",
+      "locationName": "MCV-17 Dead Breath",
+      "longitude": 74.0,
+      "latitude": -74.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At MCV-17 Dead Breath.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-054",
+      "sampleId": "054",
+      "name": "Earthfire",
+      "category": "holo_memory",
+      "locationName": "MCV-12 Eternal Flame",
+      "longitude": 89.0,
+      "latitude": 47.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At MCV-12 Eternal Flame.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-056",
+      "sampleId": "056",
+      "name": "Handoff",
+      "category": "holo_memory",
+      "locationName": "Southeast of Habitat Node 06-3.5",
+      "longitude": 26.4,
+      "latitude": 4.9,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "About 300 meters southeast of Habitat Node 06-3.5.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms",
+        "community_wiki"
+      ]
+    },
+    {
+      "id": "sample-057",
+      "sampleId": "057",
+      "name": "Left Behind",
+      "category": "holo_memory",
+      "locationName": "East of Navigation Beacon 49",
+      "longitude": 37.1,
+      "latitude": 6.0,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "About 300 meters east of Navigation Beacon 49.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms",
+        "community_wiki"
+      ]
+    },
+    {
+      "id": "sample-059",
+      "sampleId": "059",
+      "name": "UNKNOWN – Sample 059",
+      "category": "holo_memory",
+      "locationName": "Open water near 64.9:-3.9",
+      "longitude": 64.9,
+      "latitude": -3.9,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "Underwater holo at 64.9:-3.9. The available sources do not document the English in-game sample name.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms"
+      ]
+    },
+    {
+      "id": "sample-060",
+      "sampleId": "060",
+      "name": "Cargo Net",
+      "category": "holo_memory",
+      "locationName": "South of NDNS Node 55,-2",
+      "longitude": 55.3,
+      "latitude": 1.1,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "About 345 meters south of NDNS Node 55,-2.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms",
+        "community_wiki"
+      ]
+    },
+    {
+      "id": "sample-062",
+      "sampleId": "062",
+      "name": "Drift Pair",
+      "category": "holo_memory",
+      "locationName": "East of Habitat Node 14-7",
+      "longitude": 106.7,
+      "latitude": 50.1,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "About 300 meters east of Habitat Node 14-7.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms",
+        "community_wiki"
+      ]
+    },
+    {
+      "id": "sample-063",
+      "sampleId": "063",
+      "name": "Signal Wave",
+      "category": "holo_memory",
+      "locationName": "East of Sanctuary 37",
+      "longitude": 14.4,
+      "latitude": 8.4,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "About 300 meters east of Sanctuary 37.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_new_holograms",
+        "community_wiki"
+      ]
+    },
+    {
+      "id": "sample-085",
+      "sampleId": "085",
+      "name": "Rooftop Wait",
+      "category": "holo_memory",
+      "locationName": "Brighton Grave",
+      "longitude": 58.0,
+      "latitude": -14.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Brighton Grave; one of two Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-087",
+      "sampleId": "087",
+      "name": "Ladder Nowhere",
+      "category": "holo_memory",
+      "locationName": "Brighton Grave",
+      "longitude": 58.0,
+      "latitude": -14.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Brighton Grave; one of two Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-088",
+      "sampleId": "088",
+      "name": "Window Exit",
+      "category": "holo_memory",
+      "locationName": "Winston Grave",
+      "longitude": 28.0,
+      "latitude": -12.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Winston Grave; one of three Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-089",
+      "sampleId": "089",
+      "name": "Threshold",
+      "category": "holo_memory",
+      "locationName": "Winston Grave",
+      "longitude": 28.0,
+      "latitude": -12.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Winston Grave; one of three Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-090",
+      "sampleId": "090",
+      "name": "Last Plant",
+      "category": "holo_memory",
+      "locationName": "Lincoln Grave",
+      "longitude": 81.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-091",
+      "sampleId": "091",
+      "name": "Hallway Queue",
+      "category": "holo_memory",
+      "locationName": "Lincoln Grave",
+      "longitude": 81.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-092",
+      "sampleId": "092",
+      "name": "Shoulders",
+      "category": "holo_memory",
+      "locationName": "Lincoln Grave",
+      "longitude": 81.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-093",
+      "sampleId": "093",
+      "name": "Missing Bench",
+      "category": "holo_memory",
+      "locationName": "Lincoln Grave",
+      "longitude": 81.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-094",
+      "sampleId": "094",
+      "name": "Family Ledger",
+      "category": "holo_memory",
+      "locationName": "Hampton Grave",
+      "longitude": 103.0,
+      "latitude": 19.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Hampton Grave.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-095",
+      "sampleId": "095",
+      "name": "Balcony Hand-Off",
+      "category": "holo_memory",
+      "locationName": "Dover Grave",
+      "longitude": 137.0,
+      "latitude": 35.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Dover Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-096",
+      "sampleId": "096",
+      "name": "Wheelchair",
+      "category": "holo_memory",
+      "locationName": "Salem Grave",
+      "longitude": 109.0,
+      "latitude": 55.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Salem Grave.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-097",
+      "sampleId": "097",
+      "name": "Rooftline Argument",
+      "category": "holo_memory",
+      "locationName": "Dover Grave",
+      "longitude": 137.0,
+      "latitude": 35.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Dover Grave; spelling follows the community list. Check for a possible spelling variant in game.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [
+        "Roofline Argument"
+      ],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-098",
+      "sampleId": "098",
+      "name": "Cabinet Barricade",
+      "category": "holo_memory",
+      "locationName": "Dover Grave",
+      "longitude": 137.0,
+      "latitude": 35.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Dover Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-099",
+      "sampleId": "099",
+      "name": "Returned Keys",
+      "category": "holo_memory",
+      "locationName": "Dover Grave",
+      "longitude": 137.0,
+      "latitude": 35.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Dover Grave; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-104",
+      "sampleId": "104",
+      "name": "Bus Shelter",
+      "category": "holo_memory",
+      "locationName": "Winston Grave",
+      "longitude": 28.0,
+      "latitude": -12.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Winston Grave; one of three Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-118",
+      "sampleId": "118",
+      "name": "Dr. Evelyn James",
+      "category": "holo_memory",
+      "locationName": "Exodus Station",
+      "longitude": 126.0,
+      "latitude": 48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the control center.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-119",
+      "sampleId": "119",
+      "name": "Looking at Rocket",
+      "category": "holo_memory",
+      "locationName": "Exodus Station",
+      "longitude": 126.0,
+      "latitude": 48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "On the main platform above the rails.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-120",
+      "sampleId": "120",
+      "name": "Slip",
+      "category": "holo_memory",
+      "locationName": "Exodus Station",
+      "longitude": 126.0,
+      "latitude": 48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "On the helipad.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-121",
+      "sampleId": "121",
+      "name": "Looking Over the Rail",
+      "category": "holo_memory",
+      "locationName": "Exodus Station",
+      "longitude": 126.0,
+      "latitude": 48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "In the passage to the main platform.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-122",
+      "sampleId": "122",
+      "name": "Inspection at Exodus",
+      "category": "holo_memory",
+      "locationName": "Exodus Station",
+      "longitude": 126.0,
+      "latitude": 48.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the entrance building.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-123",
+      "sampleId": "123",
+      "name": "The Fire That Wouldn't Die",
+      "category": "holo_memory",
+      "locationName": "Black Vein Station",
+      "longitude": 50.0,
+      "latitude": -70.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Four samples are documented around Black Vein Station: at the elevator, office/save point, building roof, and main oil pump area. The available sources do not assign the four sample names to individual positions.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-124",
+      "sampleId": "124",
+      "name": "FS-204-72",
+      "category": "holo_memory",
+      "locationName": "Seed Reserve 11",
+      "longitude": 71.0,
+      "latitude": -67.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "In front of a seed chamber at Seed Reserve 11.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "community_wiki",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-125",
+      "sampleId": "125",
+      "name": "Oceanmark White",
+      "category": "holo_memory",
+      "locationName": "Lazarus Complex",
+      "longitude": 70.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the large rack hall.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-126",
+      "sampleId": "126",
+      "name": "Talon Shark ID-407",
+      "category": "holo_memory",
+      "locationName": "Platform Omega",
+      "longitude": 90.0,
+      "latitude": 6.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "On Platform Omega.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-127",
+      "sampleId": "127",
+      "name": "Smile in the Dark",
+      "category": "holo_memory",
+      "locationName": "Refuel Outpost Gamma",
+      "longitude": 48.0,
+      "latitude": -6.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the underground Tommy/dinosaur room.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-128",
+      "sampleId": "128",
+      "name": "CS-17 Courier Skimmer",
+      "category": "holo_memory",
+      "locationName": "Central Warehouse Alpha",
+      "longitude": 67.0,
+      "latitude": 23.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Near the power supply.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-129",
+      "sampleId": "129",
+      "name": "Pig Experiment",
+      "category": "holo_memory",
+      "locationName": "Helios Reserve Lyra",
+      "longitude": 121.0,
+      "latitude": 29.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the underground tunnel.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-130",
+      "sampleId": "130",
+      "name": "Bouncing Echoes",
+      "category": "holo_memory",
+      "locationName": "Habitat Node 06-3.5",
+      "longitude": 24.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Habitat Node 06-3.5; one of four Holo Memory finds.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-131",
+      "sampleId": "131",
+      "name": "Still Listening",
+      "category": "holo_memory",
+      "locationName": "Research Outpost Theta-9",
+      "longitude": 53.0,
+      "latitude": -34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Part of the quest with the same name at Research Outpost Theta-9.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-502",
+      "sampleId": "502",
+      "name": "The Shape of Us",
+      "category": "cave_painting",
+      "locationName": "First Whisper",
+      "longitude": 9.0,
+      "latitude": 5.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 62,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-504",
+      "sampleId": "504",
+      "name": "Among Larger Lives",
+      "category": "cave_painting",
+      "locationName": "First Whisper",
+      "longitude": 9.0,
+      "latitude": 5.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 62,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-505",
+      "sampleId": "505",
+      "name": "Before Words",
+      "category": "cave_painting",
+      "locationName": "Grey Mouth",
+      "longitude": 110.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 198,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-506",
+      "sampleId": "506",
+      "name": "Inside the Living Pattern",
+      "category": "cave_painting",
+      "locationName": "Grey Mouth",
+      "longitude": 110.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 198,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-510",
+      "sampleId": "510",
+      "name": "Many Around the Herd",
+      "category": "cave_painting",
+      "locationName": "Grey Mouth",
+      "longitude": 110.0,
+      "latitude": 4.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 198,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-511",
+      "sampleId": "511",
+      "name": "Wall of Shared Signs",
+      "category": "cave_painting",
+      "locationName": "Deep Silence",
+      "longitude": 49.0,
+      "latitude": -20.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 168,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-512",
+      "sampleId": "512",
+      "name": "Facing Bison",
+      "category": "cave_painting",
+      "locationName": "Far Horizon",
+      "longitude": 134.0,
+      "latitude": 55.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 138,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-514",
+      "sampleId": "514",
+      "name": "The Marked Hand",
+      "category": "cave_painting",
+      "locationName": "Far Horizon",
+      "longitude": 134.0,
+      "latitude": 55.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 138,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-517",
+      "sampleId": "517",
+      "name": "Animals in Motion",
+      "category": "cave_painting",
+      "locationName": "North Lantern",
+      "longitude": 55.0,
+      "latitude": -82.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 60,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-518",
+      "sampleId": "518",
+      "name": "Work Beneath the Tree",
+      "category": "cave_painting",
+      "locationName": "North Lantern",
+      "longitude": 55.0,
+      "latitude": -82.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 60,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-521",
+      "sampleId": "521",
+      "name": "Circle of the Herd",
+      "category": "cave_painting",
+      "locationName": "Deep Silence",
+      "longitude": 49.0,
+      "latitude": -20.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms.",
+      "underwater": true,
+      "depthMeters": 168,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-522",
+      "sampleId": "522",
+      "name": "Hands Among the Animals",
+      "category": "cave_painting",
+      "locationName": "The Fourth Chamber",
+      "longitude": 108.0,
+      "latitude": -34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms. It is behind the locked puzzle door. Place the statues from left to right: Augustus of Prima Porta, Moses, Vulcan, God of the Forge; then connect power.",
+      "underwater": true,
+      "depthMeters": 123,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-527",
+      "sampleId": "527",
+      "name": "What the Water Gave",
+      "category": "cave_painting",
+      "locationName": "The Fourth Chamber",
+      "longitude": 108.0,
+      "latitude": -34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms. It is behind the locked puzzle door. Place the statues from left to right: Augustus of Prima Porta, Moses, Vulcan, God of the Forge; then connect power.",
+      "underwater": true,
+      "depthMeters": 123,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-531",
+      "sampleId": "531",
+      "name": "Among Larger Bodies",
+      "category": "cave_painting",
+      "locationName": "The Fourth Chamber",
+      "longitude": 108.0,
+      "latitude": -34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms. It is behind the locked puzzle door. Place the statues from left to right: Augustus of Prima Porta, Moses, Vulcan, God of the Forge; then connect power.",
+      "underwater": true,
+      "depthMeters": 123,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-537",
+      "sampleId": "537",
+      "name": "What Could Feed and Wound",
+      "category": "cave_painting",
+      "locationName": "The Fourth Chamber",
+      "longitude": 108.0,
+      "latitude": -34.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "The marker shows the cave entrance or known cave anchor. The painting is inside, usually in one of the rear rooms. It is behind the locked puzzle door. Place the statues from left to right: Augustus of Prima Porta, Moses, Vulcan, God of the Forge; then connect power.",
+      "underwater": true,
+      "depthMeters": 123,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_cave_locations",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-547",
+      "sampleId": "547",
+      "name": "A Figure That Outlived Its Maker",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Aurora",
+      "longitude": 160.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "In the rocky area at Quarantine Stack Aurora.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-559",
+      "sampleId": "559",
+      "name": "A Bird Worth Remembering",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Chorus",
+      "longitude": 147.0,
+      "latitude": -32.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the smaller main rock of Quarantine Stack Chorus.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-568",
+      "sampleId": "568",
+      "name": "A Map Before Maps",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Aurora",
+      "longitude": 160.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Underwater near the rocks at Quarantine Stack Aurora.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-575",
+      "sampleId": "575",
+      "name": "A Small Model of the World",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Amen",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the very top of Quarantine Stack Amen. This is the corrected position; the early list incorrectly named an area south of Aurora.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_followup_comments",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-584",
+      "sampleId": "584",
+      "name": "The Wall That Kept Adding Life",
+      "category": "rock_painting",
+      "locationName": "Southeast of Quarantine Stack Amen",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "approximate",
+      "status": "community-confirmed",
+      "positionNote": "Unmarked rock formation southeast of Stack Amen. The marker is only a search anchor at the stack, not the exact sample position.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-589",
+      "sampleId": "589",
+      "name": "One Who Stood Different",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Dawn",
+      "longitude": 150.0,
+      "latitude": -46.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Underwater at the tower without a control panel.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-591",
+      "sampleId": "591",
+      "name": "The Calling Stag",
+      "category": "rock_painting",
+      "locationName": "West of Quarantine Stack Amen",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "approximate",
+      "status": "community-confirmed",
+      "positionNote": "At the far western edge of the rock formation. The marker is only a search anchor at the stack, not the exact sample position.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-596",
+      "sampleId": "596",
+      "name": "Skills Passed On",
+      "category": "rock_painting",
+      "locationName": "Rocks northeast of Quarantine Stack Amen",
+      "longitude": 147.3,
+      "latitude": -33.9,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "At the second-highest rock, about 10 meters underwater.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_followup_comments"
+      ]
+    },
+    {
+      "id": "sample-598",
+      "sampleId": "598",
+      "name": "Knowledge in Pieces",
+      "category": "rock_painting",
+      "locationName": "The Spire of Command",
+      "longitude": 21.0,
+      "latitude": 46.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "About three quarters of the way up the spire.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-603",
+      "sampleId": "603",
+      "name": "Moving as One",
+      "category": "rock_painting",
+      "locationName": "The Spire of Industry",
+      "longitude": 82.0,
+      "latitude": -94.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "High up on the rock.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-604",
+      "sampleId": "604",
+      "name": "The Social Wall",
+      "category": "rock_painting",
+      "locationName": "The Spire of Command",
+      "longitude": 21.0,
+      "latitude": 46.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the Spire of Command.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-605",
+      "sampleId": "605",
+      "name": "Strength Remembered",
+      "category": "rock_painting",
+      "locationName": "Between Stack Amen and Stack Aurora",
+      "relatedLocations": [
+        "Quarantine Stack Amen",
+        "Quarantine Stack Aurora"
+      ],
+      "longitude": 151.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "Just below the water surface.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_followup_comments"
+      ]
+    },
+    {
+      "id": "sample-606",
+      "sampleId": "606",
+      "name": "What the Water Held",
+      "category": "rock_painting",
+      "locationName": "South of Stack Amen/Aurora",
+      "relatedLocations": [
+        "Quarantine Stack Amen",
+        "Quarantine Stack Aurora"
+      ],
+      "longitude": 150.0,
+      "latitude": -42.0,
+      "coordinatePrecision": "exact",
+      "status": "community-confirmed",
+      "positionNote": "Just below the water surface.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_followup_comments"
+      ]
+    },
+    {
+      "id": "sample-617",
+      "sampleId": "617",
+      "name": "Thought Becomes Code",
+      "category": "rock_painting",
+      "locationName": "The Spire of Exodus",
+      "longitude": 183.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Just above the waterline.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-624",
+      "sampleId": "624",
+      "name": "Environmental Memory",
+      "category": "rock_painting",
+      "locationName": "The Spire of Exodus",
+      "longitude": 183.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "High up on the rock.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-628",
+      "sampleId": "628",
+      "name": "Between Human and Animal",
+      "category": "rock_painting",
+      "locationName": "The Spire of Exodus",
+      "longitude": 183.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Underwater at the spire.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-635",
+      "sampleId": "635",
+      "name": "Feelings Made Visible",
+      "category": "rock_painting",
+      "locationName": "The Spire of Industry",
+      "longitude": 82.0,
+      "latitude": -94.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Underwater at the spire.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-641",
+      "sampleId": "641",
+      "name": "The Shared Pursuit",
+      "category": "rock_painting",
+      "locationName": "The Spire of Command",
+      "longitude": 21.0,
+      "latitude": 46.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Underwater in a rocky recess.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-647",
+      "sampleId": "647",
+      "name": "Branching Thought",
+      "category": "rock_painting",
+      "locationName": "The Spire of Industry",
+      "longitude": 82.0,
+      "latitude": -94.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the Spire of Industry.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-660",
+      "sampleId": "660",
+      "name": "Strength in Stone",
+      "category": "rock_painting",
+      "locationName": "Unlisted Tower",
+      "longitude": 113.0,
+      "latitude": -21.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At the unmarked tower.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-666",
+      "sampleId": "666",
+      "name": "Early Code",
+      "category": "rock_painting",
+      "locationName": "Unlisted Tower",
+      "longitude": 113.0,
+      "latitude": -21.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Just below the water surface.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-676",
+      "sampleId": "676",
+      "name": "Learning to Belong",
+      "category": "rock_painting",
+      "locationName": "Courier Sieve Node Facility – southeastern small island",
+      "longitude": 169.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "approximate",
+      "status": "community-confirmed",
+      "positionNote": "On the small island southeast of the main facility. The marker uses the facility anchor; no exact coordinate is documented.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-683",
+      "sampleId": "683",
+      "name": "The Shared Scene",
+      "category": "rock_painting",
+      "locationName": "Courier Sieve Node Facility – eastern small island",
+      "longitude": 169.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "approximate",
+      "status": "community-confirmed",
+      "positionNote": "On the small island east of the main facility. The marker uses the facility anchor; no exact coordinate is documented.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-687",
+      "sampleId": "687",
+      "name": "Mountain of Resources",
+      "category": "rock_painting",
+      "locationName": "West of Courier Sieve Node Facility",
+      "longitude": 169.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "approximate",
+      "status": "community-confirmed",
+      "positionNote": "Underwater west of the facility. The marker uses the facility anchor; no exact coordinate is documented.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-694",
+      "sampleId": "694",
+      "name": "Speed Remembered",
+      "category": "rock_painting",
+      "locationName": "Courier Sieve Node Facility",
+      "longitude": 169.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "At Courier Sieve Node Facility. The marker uses the facility POI anchor.",
+      "underwater": true,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "steam_followup_comments",
+        "map_maintainer_correction_2026_08_09"
+      ]
+    },
+    {
+      "id": "sample-701",
+      "sampleId": "701",
+      "name": "Beasts in Conflict",
+      "category": "rock_painting",
+      "locationName": "Courier Sieve Node Facility",
+      "longitude": 169.0,
+      "latitude": -2.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "In the main facility area.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-702",
+      "sampleId": "702",
+      "name": "The Moving Plain",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Amen – hidden cave",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the Stack Amen cave behind destructible rocks.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-703",
+      "sampleId": "703",
+      "name": "The Marked Horse",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Amen – hidden cave",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the Stack Amen cave behind destructible rocks.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    },
+    {
+      "id": "sample-704",
+      "sampleId": "704",
+      "name": "The Bond Remembered",
+      "category": "rock_painting",
+      "locationName": "Quarantine Stack Amen – hidden cave",
+      "longitude": 147.0,
+      "latitude": -38.0,
+      "coordinatePrecision": "poi",
+      "status": "community-confirmed",
+      "positionNote": "Inside the Stack Amen cave behind destructible rocks.",
+      "underwater": false,
+      "depthMeters": null,
+      "aliases": [],
+      "sourceRefs": [
+        "steam_master_list",
+        "the1killer_map_repo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1742 @@
+{
+  "schemaVersion": 1,
+  "game": "The Last Caretaker",
+  "generatedAt": "2026-08-07",
+  "datasetStatus": "community-compiled-and-conservative",
+  "wikiIndexDate": "2026-06-05",
+  "wikiIndexQuestCount": 43,
+  "recordCount": 48,
+  "additionalKnownQuestRecords": [
+    "A Place to Land",
+    "Ugly Work",
+    "First Roots",
+    "Still Listening",
+    "Project Jonah"
+  ],
+  "mapUsefulCount": 33,
+  "confidenceCounts": {
+    "community-confirmed": 17,
+    "index-listed": 4,
+    "confirmed": 27
+  },
+  "triggerCounts": {
+    "quest_progress": 7,
+    "interaction": 4,
+    "unknown": 2,
+    "quest_completion": 19,
+    "proximity": 7,
+    "arrival": 4,
+    "automatic_update_progression": 1,
+    "scan": 1,
+    "new_game": 1,
+    "system_progression": 1,
+    "choice": 1
+  },
+  "designNotes": [
+    "Do not equate the June 5 wiki index count with the current total number of quests; later/omitted quests are documented separately.",
+    "Map markers should primarily focus on proximity, arrival, scan, and interaction starts. Automatic story-chain quests should not clutter the map by default.",
+    "Quest objectives can reference existing POIs without creating duplicate permanent markers.",
+    "One Before Me proximity trigger at Sanctuary Dock 12 is both wiki-confirmed and explicitly confirmed by the user from their playthrough.",
+    "Project Jonah whale encounters are modeled as quest-unlocked world events, not ordinary quest objectives."
+  ],
+  "quests": [
+    {
+      "id": "quest-a-loyal-sphere",
+      "name": "A Loyal Sphere",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Continuation after scanning the F.E.L.I.S. prototype at Talon Offshore Proving Deck.",
+      "prerequisiteQuests": [
+        "Round This, Quiet Secrets"
+      ],
+      "startLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Talon_Offshore_Proving_Deck"
+      ]
+    },
+    {
+      "id": "quest-a-machine-that-still-flies",
+      "name": "A Machine That Still Flies",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Salvage Gyro progression after blueprint recovery.",
+      "prerequisiteQuests": [
+        "Salvage Gyro - Lost Blueprints"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "index-listed",
+      "playerVerified": false,
+      "notes": [
+        "Listed in the wiki quest index. The available sources do not document an initiation hand-off, so no quest-start marker is shown."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests"
+      ]
+    },
+    {
+      "id": "quest-a-place-to-land",
+      "name": "A Place to Land",
+      "aliases": [],
+      "indexStatus": "post-index-or-omitted",
+      "triggerType": "interaction",
+      "initiatedBy": "Go to Sanctuary Dock 12 and scan the Gyro Deck blueprints in the crafting/recycler room.",
+      "prerequisiteQuests": [
+        "Salvage Gyro - Lost Blueprints"
+      ],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 12",
+          "longitude": 88,
+          "latitude": 27,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Sanctuary Dock 12",
+          "longitude": 88,
+          "latitude": 27,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Not present on the June 5 wiki quest index, but documented by current quest/skill guides."
+      ],
+      "sourceUrls": [
+        "https://www.neoseeker.com/the-last-caretaker/A_Place_to_Land",
+        "https://thelastcaretakergame.org/guides/salvage-gyro"
+      ]
+    },
+    {
+      "id": "quest-accepting-the-rules",
+      "name": "Accepting the Rules",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "unknown",
+      "initiatedBy": null,
+      "prerequisiteQuests": [],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "index-listed",
+      "playerVerified": false,
+      "notes": [
+        "Listed in the June wiki index, but exact initiation/location was not recovered reliably in this pass."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests"
+      ]
+    },
+    {
+      "id": "quest-ascension",
+      "name": "Ascension",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Earth is the Cradle of Humanity, but we can not stay.",
+      "prerequisiteQuests": [
+        "Earth is the Cradle of Humanity, but we can not stay"
+      ],
+      "startLocations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 125,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 125,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Ascension"
+      ]
+    },
+    {
+      "id": "quest-awakening-the-hall",
+      "name": "Awakening the Hall",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Completion of the first objective of Lazarus, Come Forth.",
+      "prerequisiteQuests": [
+        "Lazarus, Come Forth"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Awakening_the_Hall"
+      ]
+    },
+    {
+      "id": "quest-beyond-the-horizon",
+      "name": "Beyond the Horizon",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach Navigation Beacon 32.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Navigation Beacon 32",
+          "longitude": 109,
+          "latitude": 35,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Beyond_the_Horizon",
+        "https://thelastcaretaker.wiki.gg/wiki/Navigation_Beacon_32"
+      ]
+    },
+    {
+      "id": "quest-earth-is-the-cradle-of-humanity-but-we-can-not-stay",
+      "name": "Earth is the Cradle of Humanity, but we can not stay",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Time to Let Go Soon.",
+      "prerequisiteQuests": [
+        "Time to Let Go Soon"
+      ],
+      "startLocations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 125,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 125,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Earth_is_the_Cradle_of_Humanity%2C_but_we_can_not_stay"
+      ]
+    },
+    {
+      "id": "quest-echoes-in-the-grave",
+      "name": "Echoes in the Grave",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of From Ashes, We Rise.",
+      "prerequisiteQuests": [
+        "From Ashes, We Rise"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Norfolk Grave",
+          "longitude": 59,
+          "latitude": -41,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Echoes_in_the_Grave",
+        "https://thelastcaretaker.wiki.gg/wiki/Norfolk_Grave"
+      ]
+    },
+    {
+      "id": "quest-eden-cradle",
+      "name": "Eden Cradle",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "arrival",
+      "initiatedBy": "Travel to Eden Cradle after the location appears.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Eden Cradle",
+          "longitude": 167,
+          "latitude": 34,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Eden Cradle",
+          "longitude": 167,
+          "latitude": 34,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Eden_Cradle",
+        "https://thelastcaretaker.wiki.gg/wiki/Eden_Cradle"
+      ]
+    },
+    {
+      "id": "quest-first-light",
+      "name": "First Light",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Rags to Riches.",
+      "prerequisiteQuests": [
+        "Rags to Riches"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/First_Light"
+      ]
+    },
+    {
+      "id": "quest-first-roots",
+      "name": "First Roots",
+      "aliases": [],
+      "indexStatus": "post-index-or-omitted",
+      "triggerType": "automatic_update_progression",
+      "initiatedBy": "Received on loading a save after Update 5; directs the player to Pishon.",
+      "prerequisiteQuests": [
+        "Project Eden"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Pishon is described as northeast of The Last Listener Station, but this pack does not invent an exact coordinate.",
+        "Add Pishon coordinates later from the local map/game if a reliable exact anchor is available."
+      ],
+      "sourceUrls": [
+        "https://www.neoseeker.com/the-last-caretaker/First_Roots",
+        "https://www.whisperofthehouse.com/the-last-caretaker/project-eden-guide",
+        "https://thelastcaretaker.com/news/2026-06-25-the-last-caretaker-launches-update-5-new-horizons-new-progression-paths-exploration-systems-tools-storyline-and-major-improvements/"
+      ]
+    },
+    {
+      "id": "quest-friendly-by-design",
+      "name": "Friendly by Design",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "scan",
+      "initiatedBy": "Scan any Broken Sweetheart.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "Convenient guaranteed/known start opportunity: Broken Sweetheart in the FELIS prototype room. The quest can start elsewhere by scanning any Broken Sweetheart."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Not tied to one mandatory location; Talon Offshore Proving Deck is a convenient documented trigger opportunity."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Talon_Offshore_Proving_Deck"
+      ]
+    },
+    {
+      "id": "quest-from-ashes-we-rise",
+      "name": "From Ashes, We Rise",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Lazarus/Hall restoration story progression.",
+      "prerequisiteQuests": [
+        "Lazarus, Come Forth",
+        "Awakening the Hall"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Exact hand-off point is less consistently documented than adjacent Lazarus quests."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/From_Ashes%2C_We_Rise",
+        "https://www.neoseeker.com/the-last-caretaker/Lazarus_Complex"
+      ]
+    },
+    {
+      "id": "quest-from-darkness-light",
+      "name": "From Darkness, Light",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "new_game",
+      "initiatedBy": "Start a new game / awaken at Sanctuary Dock 37.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Tutorial/story quest. Do not show as a separate quest-start marker by default."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/From_Darkness%2C_Light"
+      ]
+    },
+    {
+      "id": "quest-gift-from-above",
+      "name": "Gift from Above",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Ascension.",
+      "prerequisiteQuests": [
+        "Ascension"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Quest has a world objective/drop-pod step; exact drop-pod position is dynamic/not encoded here."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Gift_from_Above"
+      ]
+    },
+    {
+      "id": "quest-guiding-light",
+      "name": "Guiding Light",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Lazarus Complex story progression.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Guiding_Light",
+        "https://www.neoseeker.com/the-last-caretaker/Lazarus_Complex"
+      ]
+    },
+    {
+      "id": "quest-lazarus-come-forth",
+      "name": "Lazarus, Come Forth",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Story progression after Signals from Silence reveals Lazarus Complex.",
+      "prerequisiteQuests": [
+        "Signals from Silence"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Lazarus%2C_Come_Forth",
+        "https://thelastcaretaker.wiki.gg/wiki/Lazarus_Complex"
+      ]
+    },
+    {
+      "id": "quest-light-the-way-home",
+      "name": "Light the Way Home",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Story progression after Where Waters Wait.",
+      "prerequisiteQuests": [
+        "Where Waters Wait"
+      ],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Light_the_Way_Home"
+      ]
+    },
+    {
+      "id": "quest-mother",
+      "name": "Mother",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach Habitat Node 02-23.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Habitat Node 02-23",
+          "longitude": 48,
+          "latitude": -48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "Habitat Node 08-16",
+          "longitude": 130,
+          "latitude": 21,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "Habitat Node 05-14.5",
+          "longitude": 90,
+          "latitude": -56,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "Habitat Node 38-98",
+          "longitude": 8,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [
+        "The quest also contains one intermediate 'marked coordinates' step whose exact coordinate is not encoded here."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Mother",
+        "https://thelastcaretaker.wiki.gg/wiki/Habitat_Node_02-23"
+      ]
+    },
+    {
+      "id": "quest-omega-nursery",
+      "name": "Omega Nursery",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "arrival",
+      "initiatedBy": "Arrive at Platform Omega / shark icon and inspect one of the locked pen towers.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Platform Omega",
+          "longitude": 90,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Platform Omega",
+          "longitude": 90,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Quest involves the shark pens/bays at Platform Omega."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Omega_Nursery",
+        "https://thelastcaretaker.wiki.gg/wiki/Platform_Omega"
+      ]
+    },
+    {
+      "id": "quest-one-before-me",
+      "name": "One Before Me",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach Sanctuary Dock 12.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 12",
+          "longitude": 88,
+          "latitude": 27,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Sanctuary Dock 12",
+          "longitude": 88,
+          "latitude": 27,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": true,
+      "notes": [
+        "User explicitly confirmed from their completed playthrough that the quest starts on approach."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/One_Before_Me",
+        "https://thelastcaretaker.wiki.gg/wiki/Locations"
+      ]
+    },
+    {
+      "id": "quest-project-eden",
+      "name": "Project Eden",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "system_progression",
+      "initiatedBy": "Project Eden progression / committee-driven restoration route.",
+      "prerequisiteQuests": [],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "index-listed",
+      "playerVerified": false,
+      "notes": [
+        "Umbrella/progression record. Update 5 continues this route with First Roots at Pishon."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.com/news/2026-06-25-the-last-caretaker-launches-update-5-new-horizons-new-progression-paths-exploration-systems-tools-storyline-and-major-improvements/"
+      ]
+    },
+    {
+      "id": "quest-project-jonah",
+      "name": "Project Jonah",
+      "aliases": [],
+      "indexStatus": "post-index-or-omitted",
+      "triggerType": "interaction",
+      "initiatedBy": "Bring a full-grown human to Omega Nursery / Platform Omega and use the Project Jonah facility.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Platform Omega",
+          "longitude": 90,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Platform Omega",
+          "longitude": 90,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Official Update 5 confirms Project Jonah as a whale encounter/questline with a dedicated encounter location.",
+        "Current walkthroughs place the quest interaction at Omega Nursery / Platform Omega and require a full-grown human.",
+        "Completion unlocks the oil-whale world events stored separately in world_events.json."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.com/news/2026-06-25-the-last-caretaker-launches-update-5-new-horizons-new-progression-paths-exploration-systems-tools-storyline-and-major-improvements/",
+        "https://www.neoseeker.com/the-last-caretaker/Project_Jonah"
+      ]
+    },
+    {
+      "id": "quest-quarantine-stacks",
+      "name": "Quarantine Stacks",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of The Isolation.",
+      "prerequisiteQuests": [
+        "The Isolation"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Quarantine Stack Amen",
+          "longitude": 146,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Quarantine_Stacks"
+      ]
+    },
+    {
+      "id": "quest-rags-to-riches",
+      "name": "Rags to Riches",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Vessel of Tomorrow.",
+      "prerequisiteQuests": [
+        "Vessel of Tomorrow"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Rags_to_Riches"
+      ]
+    },
+    {
+      "id": "quest-relight-the-way",
+      "name": "Relight the Way",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "unknown",
+      "initiatedBy": null,
+      "prerequisiteQuests": [],
+      "startLocations": [],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "index-listed",
+      "playerVerified": false,
+      "notes": [
+        "Quest is listed in the June 5 wiki index/category, but its exact initiation rule was not reliably recovered in this research pass."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Relight_the_Way"
+      ]
+    },
+    {
+      "id": "quest-round-this-quiet-secrets",
+      "name": "Round This, Quiet Secrets",
+      "aliases": [
+        "Round Things, Quiet Secrets"
+      ],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "arrival",
+      "initiatedBy": "Arrive at Talon Offshore Proving Deck and progress through the facility.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Talon Offshore Proving Deck",
+          "longitude": 97,
+          "latitude": 58,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Wiki index says 'Round This, Quiet Secrets'; Neoseeker and skill listings use 'Round Things, Quiet Secrets'. Keep both aliases searchable."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Talon_Offshore_Proving_Deck"
+      ]
+    },
+    {
+      "id": "quest-salvage-gyro-lost-blueprints",
+      "name": "Salvage Gyro - Lost Blueprints",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Visit any Gyro Service Tower (H marker).",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "SGS-SW-115-3255",
+          "longitude": 42,
+          "latitude": 15,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "SGS-NW-115-5100",
+          "longitude": 62,
+          "latitude": -52,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "SGS-SE-145-6950",
+          "longitude": 131,
+          "latitude": 30,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "SGS-SW-115-3255",
+          "longitude": 42,
+          "latitude": 15,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "SGS-NW-115-5100",
+          "longitude": 62,
+          "latitude": -52,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "SGS-SE-145-6950",
+          "longitude": 131,
+          "latitude": 30,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Three specific service towers contain the blueprints."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Lost_Blueprints",
+        "https://thelastcaretakergame.org/guides/salvage-gyro"
+      ]
+    },
+    {
+      "id": "quest-seats-of-care",
+      "name": "Seats of Care",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "interaction",
+      "initiatedBy": "Council of Humanity committee terminal / Habitat Care committee progression.",
+      "prerequisiteQuests": [
+        "The Council of Humanity"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Council_of_Humanity"
+      ]
+    },
+    {
+      "id": "quest-seeds-of-the-future",
+      "name": "Seeds of the Future",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of From Ashes, We Rise.",
+      "prerequisiteQuests": [
+        "From Ashes, We Rise"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Seeds_of_the_Future",
+        "https://thelastcaretaker.wiki.gg/wiki/Seed_Vault_Prometheus"
+      ]
+    },
+    {
+      "id": "quest-signal-chain",
+      "name": "Signal Chain",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Continuation of the Quarantine Stacks / Codes of Stone route.",
+      "prerequisiteQuests": [
+        "The Codes of Stone"
+      ],
+      "startLocations": [
+        {
+          "name": "Quarantine Stack Amen",
+          "longitude": 146,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Signal_Chain",
+        "https://www.neoseeker.com/the-last-caretaker/Quarantine_Stacks"
+      ]
+    },
+    {
+      "id": "quest-signals-from-silence",
+      "name": "Signals from Silence",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Voyage into the Unknown.",
+      "prerequisiteQuests": [
+        "Voyage into the Unknown"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Navigation Beacon 49",
+          "longitude": 33,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Signals_from_Silence",
+        "https://thelastcaretaker.wiki.gg/wiki/Navigation_Beacon_49"
+      ]
+    },
+    {
+      "id": "quest-still-listening",
+      "name": "Still Listening",
+      "aliases": [],
+      "indexStatus": "post-index-or-omitted",
+      "triggerType": "arrival",
+      "initiatedBy": "Travel to Research Outpost Theta-9, the underwater alchemical-icon location south of Black Vein.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Research Outpost Theta-9",
+          "longitude": 53,
+          "latitude": -34,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Research Outpost Theta-9",
+          "longitude": 53,
+          "latitude": -34,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Update 5 quest; completion unlocks the Tideripper Twin Jet according to current skill/quest guides."
+      ],
+      "sourceUrls": [
+        "https://www.neoseeker.com/the-last-caretaker/Still_Listening",
+        "https://steamcommunity.com/app/1783560/discussions/0/573793023877686763/"
+      ]
+    },
+    {
+      "id": "quest-the-codes-of-stone",
+      "name": "The Codes of Stone",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_progress",
+      "initiatedBy": "Quarantine Stacks progression at/after Quarantine Stack Amen.",
+      "prerequisiteQuests": [
+        "Quarantine Stacks"
+      ],
+      "startLocations": [
+        {
+          "name": "Quarantine Stack Amen",
+          "longitude": 146,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Quarantine Stack Amen",
+          "longitude": 146,
+          "latitude": -38,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Codes_of_Stone",
+        "https://www.neoseeker.com/the-last-caretaker/Quarantine_Stacks"
+      ]
+    },
+    {
+      "id": "quest-the-council-of-humanity",
+      "name": "The Council of Humanity",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Gift from Above; return to Lazarus Complex / Council chamber.",
+      "prerequisiteQuests": [
+        "Gift from Above"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Council_of_Humanity",
+        "https://www.neoseeker.com/the-last-caretaker/Council_of_Humanity"
+      ]
+    },
+    {
+      "id": "quest-the-isolation",
+      "name": "The Isolation",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach Unlisted Tower.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Unlisted Tower",
+          "longitude": 113,
+          "latitude": -21,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Isolation"
+      ]
+    },
+    {
+      "id": "quest-the-last-listener",
+      "name": "The Last Listener",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Ascension.",
+      "prerequisiteQuests": [
+        "Ascension"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "The Last Listener Station",
+          "longitude": 115,
+          "latitude": 11,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Last_Listener",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Last_Listener_Station"
+      ]
+    },
+    {
+      "id": "quest-the-next-step-of-evolution",
+      "name": "The Next Step of Evolution",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion/progression of Seeds of the Future after delivering the human seed to Lazarus.",
+      "prerequisiteQuests": [
+        "Seeds of the Future"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Next_Step_of_Evolution"
+      ]
+    },
+    {
+      "id": "quest-the-warehouse",
+      "name": "The Warehouse",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach Central Warehouse Alpha.",
+      "prerequisiteQuests": [],
+      "startLocations": [
+        {
+          "name": "Central Warehouse Alpha",
+          "longitude": 66,
+          "latitude": 22,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Central Warehouse Alpha",
+          "longitude": 66,
+          "latitude": 22,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/The_Warehouse",
+        "https://thelastcaretaker.wiki.gg/wiki/Central_Warehouse_Alpha"
+      ]
+    },
+    {
+      "id": "quest-time-to-let-go-soon",
+      "name": "Time to Let Go Soon",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of The Next Step of Evolution.",
+      "prerequisiteQuests": [
+        "The Next Step of Evolution"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Exodus Station",
+          "longitude": 125,
+          "latitude": 48,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Time_to_Let_Go_Soon"
+      ]
+    },
+    {
+      "id": "quest-true-choices",
+      "name": "True Choices",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "interaction",
+      "initiatedBy": "Accept the task from the Habitat Care committee after forming the required committee.",
+      "prerequisiteQuests": [
+        "Seats of Care"
+      ],
+      "startLocations": [
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Courier Sieve Node Facility",
+          "longitude": 169,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Council_of_Humanity",
+        "https://thelastcaretaker.wiki.gg/wiki/Courier_Sieve_Node_Facility"
+      ]
+    },
+    {
+      "id": "quest-true-choices-grow-the-perfect-human",
+      "name": "True Choices - Grow the Perfect Human",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "choice",
+      "initiatedBy": "Branch from True Choices after choosing to grow the Gold Standard / perfect human.",
+      "prerequisiteQuests": [
+        "True Choices"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Courier Sieve Node Facility",
+          "longitude": 169,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "Lazarus Complex",
+          "longitude": 69,
+          "latitude": -2,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://www.neoseeker.com/the-last-caretaker/Council_of_Humanity"
+      ]
+    },
+    {
+      "id": "quest-ugly-work",
+      "name": "Ugly Work",
+      "aliases": [],
+      "indexStatus": "post-index-or-omitted",
+      "triggerType": "proximity",
+      "initiatedBy": "Approach either the northern or southern silo; recover one blueprint from each.",
+      "prerequisiteQuests": [
+        "Salvage Gyro - Lost Blueprints"
+      ],
+      "startLocations": [
+        {
+          "name": "MCV-17 Dead Breath",
+          "longitude": 74,
+          "latitude": -74,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "MCV-12 Eternal Flame",
+          "longitude": 89,
+          "latitude": 47,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "MCV-17 Dead Breath",
+          "longitude": 74,
+          "latitude": -74,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        },
+        {
+          "name": "MCV-12 Eternal Flame",
+          "longitude": 89,
+          "latitude": 47,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": true,
+      "confidence": "community-confirmed",
+      "playerVerified": false,
+      "notes": [
+        "Requires Salvage Gyro access to reach the Recovery Grinder blueprints inside the silos."
+      ],
+      "sourceUrls": [
+        "https://www.neoseeker.com/the-last-caretaker/Ugly_Work",
+        "https://thelastcaretakergame.org/guides/salvage-gyro"
+      ]
+    },
+    {
+      "id": "quest-vessel-of-tomorrow",
+      "name": "Vessel of Tomorrow",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Light the Way Home.",
+      "prerequisiteQuests": [
+        "Light the Way Home"
+      ],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Vessel_of_Tomorrow"
+      ]
+    },
+    {
+      "id": "quest-voyage-into-the-unknown",
+      "name": "Voyage into the Unknown",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Vessel of Tomorrow.",
+      "prerequisiteQuests": [
+        "Vessel of Tomorrow"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Navigation Beacon 49",
+          "longitude": 33,
+          "latitude": 6,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [
+        "The quest reveals Navigation Beacon 49; this is an objective marker, not a hidden quest-start marker."
+      ],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Voyage_into_the_Unknown",
+        "https://thelastcaretaker.wiki.gg/wiki/Navigation_Beacon_49"
+      ]
+    },
+    {
+      "id": "quest-voyage-to-the-cradle",
+      "name": "Voyage to the Cradle",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of Echoes in the Grave.",
+      "prerequisiteQuests": [
+        "Echoes in the Grave"
+      ],
+      "startLocations": [],
+      "objectiveLocations": [
+        {
+          "name": "Seed Vault Prometheus",
+          "longitude": 82,
+          "latitude": -65,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": true,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Voyage_to_the_Cradle",
+        "https://thelastcaretaker.wiki.gg/wiki/Seed_Vault_Prometheus"
+      ]
+    },
+    {
+      "id": "quest-where-waters-wait",
+      "name": "Where Waters Wait",
+      "aliases": [],
+      "indexStatus": "wiki-index-2026-06-05",
+      "triggerType": "quest_completion",
+      "initiatedBy": "Completion of From Darkness, Light.",
+      "prerequisiteQuests": [
+        "From Darkness, Light"
+      ],
+      "startLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "objectiveLocations": [
+        {
+          "name": "Sanctuary Dock 37",
+          "longitude": 11,
+          "latitude": 8,
+          "coordinatePrecision": "poi",
+          "note": "POI anchor; not necessarily the exact trigger point."
+        }
+      ],
+      "mapUseful": false,
+      "suggestedDefaultMapVisibility": false,
+      "confidence": "confirmed",
+      "playerVerified": false,
+      "notes": [],
+      "sourceUrls": [
+        "https://thelastcaretaker.wiki.gg/wiki/Quests",
+        "https://thelastcaretaker.wiki.gg/wiki/Where_Waters_Wait"
+      ]
+    }
+  ]
+}
