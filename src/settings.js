@@ -1,12 +1,9 @@
 import {
     refreshDisplay,
     applyVisitOverlayVisibility,
-    toggleBackgroundLayer,
-    locations,
-    hiddenLocations,
-    lastListenerLocations,
-    caves
+    toggleBackgroundLayer
 } from './main.js';
+import locationData from './data/locations.json';
 
 // Default marker colors per type
 const defaultMarkerColors = {
@@ -57,7 +54,12 @@ const STRUCTURED_STORAGE_KEYS = [
     'tlc-secret-filters-v1'
 ];
 
-const ALL_LOCATIONS = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
+const ALL_LOCATIONS = [
+    ...locationData.locations,
+    ...locationData.hiddenLocations,
+    ...locationData.lastListenerLocations,
+    ...locationData.caves
+];
 const LOCATION_STORAGE_KEYS = ALL_LOCATIONS.flatMap(location => [
     `marker-visible-${location.id}`,
     `location-visit-${location.id}`,
