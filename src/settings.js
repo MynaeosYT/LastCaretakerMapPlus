@@ -34,26 +34,216 @@ const defaultMarkerColors = {
     "Lab": '#4eaad4'
 };
 
-// Plus feature state shared by export, import, and local-data reset.
-const PLUS_STORAGE_KEYS = [
+const BACKUP_FORMAT = 'tlc-map-plus-backup';
+const BACKUP_VERSION = 1;
+const HEX_COLOR_PATTERN = /^#[0-9a-f]{6}$/i;
+const BOOLEAN_STORAGE_VALUES = new Set(['true', 'false']);
+const VISIT_STORAGE_VALUES = new Set(['not-visited', 'visited', 'cleared']);
+const SIDEBAR_GROUPS = ['legend', 'locations', 'collectibles', 'activities', 'secrets'];
+const SIDEBAR_STORAGE_KEYS = SIDEBAR_GROUPS.map(group => `tlc-sidebar-group-v2-${group}`);
+const LEGACY_SIDEBAR_KEY_MAP = Object.fromEntries(SIDEBAR_GROUPS.map(group => [
+    `tlc-sidebar-group-v1-${group}`,
+    `tlc-sidebar-group-v2-${group}`
+]));
+const STRUCTURED_STORAGE_KEYS = [
     'tlc-sample-status-v1',
     'tlc-sample-filters-v1',
-    'tlc-sample-category-v1-holo_memory',
-    'tlc-sample-category-v1-cave_painting',
-    'tlc-sample-category-v1-rock_painting',
     'tlc-paint-status-v1',
     'tlc-paint-filters-v1',
     'tlc-quest-status-v1',
     'tlc-quest-filters-v1',
     'tlc-secret-status-v1',
     'tlc-secret-reveal-v1',
-    'tlc-secret-filters-v1',
-    'tlc-sidebar-group-v1-legend',
-    'tlc-sidebar-group-v1-locations',
-    'tlc-sidebar-group-v1-collectibles',
-    'tlc-sidebar-group-v1-activities',
-    'tlc-sidebar-group-v1-secrets'
+    'tlc-secret-filters-v1'
 ];
+
+const ALL_LOCATIONS = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
+const LOCATION_STORAGE_KEYS = ALL_LOCATIONS.flatMap(location => [
+    `marker-visible-${location.id}`,
+    `location-visit-${location.id}`,
+    `location-notes-${location.id}`
+]);
+const CATEGORY_STORAGE_KEYS = [
+    'category-visible-main-locations',
+    'category-visible-hidden-locations',
+    'category-visible-last-listener-locations',
+    'category-visible-caves-locations'
+];
+const BOOLEAN_SETTING_KEYS = [
+    'show-hidden-locations',
+    'show-last-listener',
+    'show-caves',
+    'show-primary-numbers',
+    'show-visit-overlays',
+    'use-solid-background',
+    ...CATEGORY_STORAGE_KEYS,
+    'tlc-sample-category-v1-holo_memory',
+    'tlc-sample-category-v1-cave_painting',
+    'tlc-sample-category-v1-rock_painting',
+    ...SIDEBAR_STORAGE_KEYS
+];
+const MARKER_COLOR_KEYS = Object.keys(defaultMarkerColors).map(type => `marker-color-${type}`);
+const SUPPORTED_STORAGE_KEYS = new Set([
+    ...LOCATION_STORAGE_KEYS,
+    ...BOOLEAN_SETTING_KEYS,
+    ...STRUCTURED_STORAGE_KEYS,
+    ...MARKER_COLOR_KEYS,
+    'background-color'
+]);
+
+function isPlainObject(value) {
+    return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+
+function hasOnlyKeys(object, allowedKeys) {
+    const allowed = new Set(allowedKeys);
+    return Object.keys(object).every(key => allowed.has(key));
+}
+
+function hasNoDangerousKeys(value) {
+    if (Array.isArray(value)) return value.every(hasNoDangerousKeys);
+    if (!isPlainObject(value)) return true;
+    return Object.entries(value).every(([key, child]) => (
+        !['__proto__', 'prototype', 'constructor'].includes(key) && hasNoDangerousKeys(child)
+    ));
+}
+
+function isBooleanObject(object, allowedKeys) {
+    return isPlainObject(object)
+        && hasOnlyKeys(object, allowedKeys)
+        && Object.values(object).every(value => typeof value === 'boolean');
+}
+
+function validateStructuredStorage(key, value) {
+    let parsed;
+    try {
+        parsed = JSON.parse(value);
+    } catch {
+        throw new Error(`${key} does not contain valid JSON.`);
+    }
+    if (!isPlainObject(parsed) || !hasNoDangerousKeys(parsed)) {
+        throw new Error(`${key} must contain a safe JSON object.`);
+    }
+
+    const valid = (() => {
+        switch (key) {
+            case 'tlc-sample-status-v1':
+                return Object.values(parsed).every(state => state === 'collected');
+            case 'tlc-sample-filters-v1':
+                return isBooleanObject(parsed, ['uncollectedOnly', 'exactOnly', 'showPoi', 'showApproximate']);
+            case 'tlc-paint-status-v1': {
+                if (!hasOnlyKeys(parsed, ['found', 'unlocked']) || !isPlainObject(parsed.found) || !isPlainObject(parsed.unlocked)) return false;
+                return Object.values(parsed.found).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string'))
+                    && Object.values(parsed.unlocked).every(state => typeof state === 'boolean');
+            }
+            case 'tlc-paint-filters-v1':
+                return isBooleanObject(parsed, ['showPaints', 'incompleteOnly', 'notUnlockedOnly', 'exactPositions']);
+            case 'tlc-quest-status-v1':
+                return Object.values(parsed).every(state => ['unknown', 'active', 'completed'].includes(state));
+            case 'tlc-quest-filters-v1':
+                return isBooleanObject(parsed, ['showStarts', 'showObjectives', 'showRewards', 'showEvents', 'showLockedEvents']);
+            case 'tlc-secret-status-v1':
+                return Object.values(parsed).every(state => ['unknown', 'found', 'solved'].includes(state));
+            case 'tlc-secret-reveal-v1':
+                return Object.values(parsed).every(state => isBooleanObject(state, ['hintRevealed', 'solutionRevealed', 'contentsRevealed']));
+            case 'tlc-secret-filters-v1':
+                return isBooleanObject(parsed, ['showSecrets', 'unsolvedOnly', 'showResearch']);
+            default:
+                return false;
+        }
+    })();
+
+    if (!valid) throw new Error(`${key} has an unsupported data structure.`);
+}
+
+function validateStorageValue(key, value) {
+    if (value === null) return;
+    if (typeof value !== 'string') throw new Error(`${key} must be a string or null.`);
+
+    if (BOOLEAN_SETTING_KEYS.includes(key) || key.startsWith('marker-visible-')) {
+        if (!BOOLEAN_STORAGE_VALUES.has(value)) throw new Error(`${key} must be "true" or "false".`);
+        return;
+    }
+    if (key.startsWith('location-visit-')) {
+        if (!VISIT_STORAGE_VALUES.has(value)) throw new Error(`${key} contains an invalid visit state.`);
+        return;
+    }
+    if (key.startsWith('location-notes-')) {
+        if (value.length > 100000) throw new Error(`${key} exceeds the supported note length.`);
+        return;
+    }
+    if (key === 'background-color' || key.startsWith('marker-color-')) {
+        if (!HEX_COLOR_PATTERN.test(value)) throw new Error(`${key} must be a six-digit hex color.`);
+        return;
+    }
+    if (STRUCTURED_STORAGE_KEYS.includes(key)) {
+        validateStructuredStorage(key, value);
+        return;
+    }
+    throw new Error(`Unsupported backup key: ${key}`);
+}
+
+function validateAndNormalizeBackup(imported) {
+    if (!isPlainObject(imported)) throw new Error('The backup root must be a JSON object.');
+
+    const isVersioned = Object.hasOwn(imported, 'format') || Object.hasOwn(imported, 'version') || Object.hasOwn(imported, 'data');
+    let source;
+    if (isVersioned) {
+        if (!hasOnlyKeys(imported, ['format', 'version', 'exportedAt', 'data'])) throw new Error('The backup contains unsupported top-level fields.');
+        if (imported.format !== BACKUP_FORMAT || imported.version !== BACKUP_VERSION) throw new Error('Unsupported backup format or version.');
+        if (typeof imported.exportedAt !== 'string' || Number.isNaN(Date.parse(imported.exportedAt))) throw new Error('The backup export date is invalid.');
+        if (!isPlainObject(imported.data)) throw new Error('The backup data field must be a JSON object.');
+        source = imported.data;
+    } else {
+        source = imported;
+    }
+
+    const normalized = {};
+    Object.entries(source).forEach(([key, value]) => {
+        if (!SUPPORTED_STORAGE_KEYS.has(key)) {
+            if (Object.hasOwn(LEGACY_SIDEBAR_KEY_MAP, key)) return;
+            if (isVersioned) throw new Error(`Unsupported backup key: ${key}`);
+            return;
+        }
+        validateStorageValue(key, value);
+        normalized[key] = value;
+    });
+    Object.entries(LEGACY_SIDEBAR_KEY_MAP).forEach(([legacyKey, currentKey]) => {
+        if (!Object.hasOwn(normalized, currentKey) && Object.hasOwn(source, legacyKey)) {
+            validateStorageValue(currentKey, source[legacyKey]);
+            normalized[currentKey] = source[legacyKey];
+        }
+    });
+    if (Object.keys(normalized).length === 0) throw new Error('The backup does not contain any supported data.');
+    return { data: normalized, legacy: !isVersioned };
+}
+
+function clearSupportedStorage() {
+    SUPPORTED_STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
+    Object.keys(LEGACY_SIDEBAR_KEY_MAP).forEach(key => localStorage.removeItem(key));
+}
+
+function storedColor(key, fallback) {
+    const value = localStorage.getItem(key);
+    return value && HEX_COLOR_PATTERN.test(value) ? value : fallback;
+}
+
+function restoreBackupData(data) {
+    const keysToSnapshot = [...SUPPORTED_STORAGE_KEYS, ...Object.keys(LEGACY_SIDEBAR_KEY_MAP)];
+    const snapshot = Object.fromEntries(keysToSnapshot.map(key => [key, localStorage.getItem(key)]));
+    try {
+        clearSupportedStorage();
+        Object.entries(data).forEach(([key, value]) => {
+            if (value !== null) localStorage.setItem(key, value);
+        });
+    } catch (error) {
+        clearSupportedStorage();
+        Object.entries(snapshot).forEach(([key, value]) => {
+            if (value !== null) localStorage.setItem(key, value);
+        });
+        throw error;
+    }
+}
 
 // Friendly display names for types
 const typeDisplayNames = {
@@ -80,9 +270,7 @@ const typeDisplayNames = {
 
 // Get the marker color for a given type, checking user overrides first
 export function getMarkerColor(type) {
-    const userColor = localStorage.getItem(`marker-color-${type}`);
-    if (userColor && /^#[0-9a-f]{6}$/i.test(userColor)) return userColor;
-    return defaultMarkerColors[type] || '#ffffff';
+    return storedColor(`marker-color-${type}`, defaultMarkerColors[type] || '#ffffff');
 }
 
 // Settings popup functionality
@@ -127,39 +315,7 @@ document.addEventListener('keydown', (e) => {
 // Clear local data
 clearDataButton.addEventListener('click', () => {
     if (confirm('Are you sure you want to clear all local data? This will reset all visibility preferences.')) {
-        // Clear all marker visibility states for all location types
-        const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
-        allLocations.forEach(location => {
-            localStorage.removeItem(`marker-visible-${location.id}`);
-        });
-
-        // Clear category visibility states
-        localStorage.removeItem('category-visible-main-locations');
-        localStorage.removeItem('category-visible-hidden-locations');
-        localStorage.removeItem('category-visible-last-listener-locations');
-        localStorage.removeItem('category-visible-caves-locations');
-
-        // Clear settings
-        localStorage.removeItem('show-hidden-locations');
-        localStorage.removeItem('show-last-listener');
-        localStorage.removeItem('show-caves');
-        localStorage.removeItem('show-primary-numbers');
-        localStorage.removeItem('show-visit-overlays');
-        localStorage.removeItem('use-solid-background');
-        localStorage.removeItem('background-color');
-        PLUS_STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
-
-        // Clear all visit states
-        allLocations.forEach(location => {
-            localStorage.removeItem(`location-visit-${location.id}`);
-        });
-
-        // Clear marker color settings
-        Object.keys(defaultMarkerColors).forEach(type => {
-            localStorage.removeItem(`marker-color-${type}`);
-        });
-
-        // Reload the page to reset everything
+        clearSupportedStorage();
         window.location.reload();
     }
 });
@@ -172,7 +328,7 @@ function loadSettingsState() {
     const showPrimaryNumbers = localStorage.getItem('show-primary-numbers') === 'true';
     const showVisitOverlays = localStorage.getItem('show-visit-overlays') !== 'false';
     const useSolidBackground = localStorage.getItem('use-solid-background') === 'true';
-    const backgroundColor = localStorage.getItem('background-color') || '#17531b';
+    const backgroundColor = storedColor('background-color', '#17531b');
 
     showHiddenCheckbox.checked = showHidden;
     showLastListenerCheckbox.checked = showLastListener;
@@ -242,7 +398,7 @@ backgroundColorPicker.addEventListener('input', () => {
 // Apply background style based on settings
 function applyBackgroundStyle() {
     const useSolid = localStorage.getItem('use-solid-background') === 'true';
-    const bgColor = localStorage.getItem('background-color') || '#17531b';
+    const bgColor = storedColor('background-color', '#17531b');
     const mapElement = document.getElementById('map');
 
     if (useSolid) {
@@ -307,49 +463,18 @@ const exportDataButton = document.getElementById('export-data-button');
 if (exportDataButton) {
     exportDataButton.addEventListener('click', () => {
         try {
-            const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
-            const dataToExport = {};
-
-            // Export all location-specific data
-            allLocations.forEach(location => {
-                dataToExport[`marker-visible-${location.id}`] = localStorage.getItem(`marker-visible-${location.id}`);
-                dataToExport[`location-visit-${location.id}`] = localStorage.getItem(`location-visit-${location.id}`);
-                dataToExport[`location-notes-${location.id}`] = localStorage.getItem(`location-notes-${location.id}`);
-            });
-
-            // Export category visibility states
-            dataToExport['category-visible-main-locations'] = localStorage.getItem('category-visible-main-locations');
-            dataToExport['category-visible-hidden-locations'] = localStorage.getItem('category-visible-hidden-locations');
-            dataToExport['category-visible-last-listener-locations'] = localStorage.getItem('category-visible-last-listener-locations');
-            dataToExport['category-visible-caves-locations'] = localStorage.getItem('category-visible-caves-locations');
-
-            // Export settings
-            dataToExport['show-hidden-locations'] = localStorage.getItem('show-hidden-locations');
-            dataToExport['show-last-listener'] = localStorage.getItem('show-last-listener');
-            dataToExport['show-caves'] = localStorage.getItem('show-caves');
-            dataToExport['show-primary-numbers'] = localStorage.getItem('show-primary-numbers');
-            dataToExport['show-visit-overlays'] = localStorage.getItem('show-visit-overlays');
-            dataToExport['use-solid-background'] = localStorage.getItem('use-solid-background');
-            dataToExport['background-color'] = localStorage.getItem('background-color');
-            PLUS_STORAGE_KEYS.forEach(key => {
-                dataToExport[key] = localStorage.getItem(key);
-            });
-
-            // Export marker colors
-            Object.keys(defaultMarkerColors).forEach(type => {
-                const color = localStorage.getItem(`marker-color-${type}`);
-                if (color) {
-                    dataToExport[`marker-color-${type}`] = color;
-                }
-            });
-
-            // Create and download JSON file
-            const dataStr = JSON.stringify(dataToExport, null, 2);
+            const backup = {
+                format: BACKUP_FORMAT,
+                version: BACKUP_VERSION,
+                exportedAt: new Date().toISOString(),
+                data: Object.fromEntries([...SUPPORTED_STORAGE_KEYS].map(key => [key, localStorage.getItem(key)]))
+            };
+            const dataStr = JSON.stringify(backup, null, 2);
             const dataBlob = new Blob([dataStr], { type: 'application/json' });
             const url = URL.createObjectURL(dataBlob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = `caretaker-map-data-${new Date().toISOString().split('T')[0]}.json`;
+            link.download = `tlc-map-plus-backup-${new Date().toISOString().split('T')[0]}.json`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -378,35 +503,15 @@ if (importDataButton && importFileInput) {
         reader.onload = (event) => {
             try {
                 const importedData = JSON.parse(event.target.result);
-
-                if (confirm('Import data? This will overwrite your current preferences.')) {
-                    // Clear existing data first
-                    const allLocations = [...locations, ...hiddenLocations, ...lastListenerLocations, ...caves];
-                    allLocations.forEach(location => {
-                        localStorage.removeItem(`marker-visible-${location.id}`);
-                        localStorage.removeItem(`location-visit-${location.id}`);
-                        localStorage.removeItem(`location-notes-${location.id}`);
-                    });
-
-                    Object.keys(defaultMarkerColors).forEach(type => {
-                        localStorage.removeItem(`marker-color-${type}`);
-                    });
-
-                    // Prevent states absent from an older backup from leaking into the restored profile.
-                    PLUS_STORAGE_KEYS.forEach(key => localStorage.removeItem(key));
-
-                    // Import all data
-                    Object.keys(importedData).forEach(key => {
-                        if (importedData[key] !== null) {
-                            localStorage.setItem(key, importedData[key]);
-                        }
-                    });
-
+                const validated = validateAndNormalizeBackup(importedData);
+                const compatibilityNote = validated.legacy ? ' This older backup will be migrated to the current format.' : '';
+                if (confirm(`Import validated backup? This will overwrite your current preferences.${compatibilityNote}`)) {
+                    restoreBackupData(validated.data);
                     window.location.reload();
                 }
             } catch (err) {
                 console.error('Import error:', err);
-                alert('Error importing data. Please check the file format.');
+                alert(`Backup was not imported: ${err.message}`);
             }
         };
         reader.readAsText(file);

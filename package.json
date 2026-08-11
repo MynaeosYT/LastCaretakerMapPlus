@@ -5,7 +5,7 @@
   "private": true,
   "license": "BSD-2-Clause",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12.0"
   },
   "type": "module",
   "scripts": {
@@ -15,7 +15,9 @@
     "validate:samples": "node scripts/validate-samples.mjs src/data/samples.json",
     "validate:paints": "node scripts/validate-paints.mjs src/data/paint_schemes.json",
     "validate:quests": "node scripts/validate-quests.mjs src/data/quests.json src/data/world_events.json",
-    "validate:secrets": "node scripts/validate-secrets.mjs src/data/secrets.json"
+    "validate:secrets": "node scripts/validate-secrets.mjs src/data/secrets.json",
+    "validate:icons": "node scripts/validate-icons.mjs",
+    "validate:all": "npm run validate:samples && npm run validate:paints && npm run validate:quests && npm run validate:secrets && npm run validate:icons"
   },
   "dependencies": {
     "leaflet": "^1.9.4"

@@ -44,7 +44,7 @@ not include Google Analytics or another analytics service.
 
 ## Requirements
 
-- A current Node.js LTS release (Node.js 20 or newer)
+- Node.js 22.12 or newer (Node.js 22 LTS recommended)
 - npm
 
 No global npm packages are required.
@@ -86,7 +86,10 @@ npm run validate:samples
 npm run validate:paints
 npm run validate:quests
 npm run validate:secrets
+npm run validate:icons
 ```
+
+Run the complete validation suite with `npm run validate:all`.
 
 Detailed source notes and known uncertainties are documented in
 `SOURCES_AND_UNCERTAINTIES.md` and the catalog files under `src/data/`.
@@ -126,3 +129,6 @@ is associated with them.
 Source code derived from the original map remains available under the BSD
 2-Clause License in `LICENSE`. Rights to the game, its names, and game-derived
 artwork remain with their respective owners.
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the distinction between
+the source-code license and the separately permitted in-game POI icons.
