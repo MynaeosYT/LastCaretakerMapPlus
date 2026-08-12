@@ -2,7 +2,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './styles.scss';
 
-import { getMarkerColor } from './settings.js'
+import { getMarkerColor } from './marker-colors.js';
+import { initSettings } from './settings.js';
 
 import locationData from './data/locations.json';
 import locationTypes from './data/types.json';
@@ -737,6 +738,7 @@ function highlightMarker(locationId) {
 }
 
 // Initialize the application
+initSettings({ refreshDisplay, applyVisitOverlayVisibility, toggleBackgroundLayer });
 refreshDisplay();
 setupSearch();
 initSamples(map);

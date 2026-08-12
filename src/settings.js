@@ -1,36 +1,11 @@
-import {
-    refreshDisplay,
-    applyVisitOverlayVisibility,
-    toggleBackgroundLayer
-} from './main.js';
 import locationData from './data/locations.json';
+import { defaultMarkerColors, getMarkerColor } from './marker-colors.js';
+
+let refreshDisplay;
+let applyVisitOverlayVisibility;
+let toggleBackgroundLayer;
 
 // Default marker colors per type
-const defaultMarkerColors = {
-    Hanger: '#ffffff',
-    NavBeacon: '#ffffff',
-    Rocket: '#ffffff',
-    RefuelOutpost: '#aa232f',
-    HeliosReserve: '#AB5024',
-    Habitat: '#1C86E6',
-    RockySpire: '#A67E3D',
-    Maze: '#A67E3D',
-    Ruin: '#000000',
-    NDNS: '#555555',
-    Cave: '#8A1CE6',
-    SeedVault: '#1CE2E6',
-    Lazarus: '#ffffff',
-    OilRig: '#ffffff',
-    SharkBay: '#E61CE6',
-    StarChild: '#E61CE6',
-    RollerFactory: '#E61CE6',
-    GyroPlatform: '#ff9900',
-    Silo: '#ff9900',
-    "StatueSpire": '#CCCCCC',
-    "Eden": '#ffffff',
-    "Lab": '#4eaad4'
-};
-
 const BACKUP_FORMAT = 'tlc-map-plus-backup';
 const BACKUP_VERSION = 1;
 const HEX_COLOR_PATTERN = /^#[0-9a-f]{6}$/i;
@@ -269,11 +244,6 @@ const typeDisplayNames = {
     GyroPlatform: 'Gyro Platform',
     Silo: 'Silo'
 };
-
-// Get the marker color for a given type, checking user overrides first
-export function getMarkerColor(type) {
-    return storedColor(`marker-color-${type}`, defaultMarkerColors[type] || '#ffffff');
-}
 
 // Settings popup functionality
 const settingsPopup = document.getElementById('settings-popup');
@@ -523,5 +493,8 @@ if (importDataButton && importFileInput) {
     });
 }
 
-// Apply background style on page load (delayed to ensure proper initialization)
-requestAnimationFrame(() => applyBackgroundStyle());
+export function initSettings(callbacks) {
+    ({ refreshDisplay, applyVisitOverlayVisibility, toggleBackgroundLayer } = callbacks);
+    loadSettingsState();
+    requestAnimationFrame(() => applyBackgroundStyle());
+}
