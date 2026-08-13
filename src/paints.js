@@ -349,7 +349,7 @@ export function initPaints(map) {
         header.type = 'button';
         header.className = 'sample-section-header paint-section-header';
         header.setAttribute('aria-expanded', String(expanded));
-        header.innerHTML = `<span>Paint Schemes (${visibleSchemes.length}/37)</span><span class="sample-section-toggle">${expanded ? '▼' : '▶'}</span>`;
+        header.innerHTML = `<span>Paint Schemes (${visibleSchemes.length}/${schemes.length} shown)</span><span class="sample-section-toggle">${expanded ? '▼' : '▶'}</span>`;
         const content = document.createElement('div');
         content.className = 'paint-section-content';
         content.hidden = !expanded;
