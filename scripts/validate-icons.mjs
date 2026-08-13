@@ -7,6 +7,7 @@ const locationsPath = path.join(projectRoot, 'src', 'data', 'locations.json');
 const typesPath = path.join(projectRoot, 'src', 'data', 'types.json');
 const imagesPath = path.join(projectRoot, 'public', 'images');
 const locationGroups = ['locations', 'hiddenLocations', 'lastListenerLocations', 'caves'];
+const requiredInterfaceIcons = ['TheLastCaretaker_Indicator_Whale.PNG'];
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, ''));
@@ -83,10 +84,16 @@ for (const [filename, mappedTypes] of filenamesToTypes) {
   }
 }
 
+for (const filename of requiredInterfaceIcons) {
+  if (!imageNames.has(filename)) {
+    errors.push(`Required interface icon public/images/${filename} is missing.`);
+  }
+}
+
 if (errors.length > 0) {
   console.error(`POI icon validation failed with ${errors.length} error(s):`);
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
 
-console.log(`POI icon validation passed: ${usedTypes.size} used types and ${filenamesToTypes.size} icon files verified.`);
+console.log(`POI icon validation passed: ${usedTypes.size} used types, ${filenamesToTypes.size} POI files, and ${requiredInterfaceIcons.length} interface icon verified.`);

@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import paintData from './data/paint_schemes.json';
 import { isRelatedLocationVisible, LOCATION_VISIBILITY_EVENT } from './location-visibility.js';
+import { getPoiDisplayPosition } from './poi-layout.js';
 
 const STATUS_KEY = 'tlc-paint-status-v1';
 const FILTER_KEY = 'tlc-paint-filters-v1';
@@ -249,7 +250,8 @@ export function initPaints(map) {
     }
 
     anchorEntries.forEach((entry) => {
-        const marker = L.marker(anchorPositions.get(entry.markerId), {
+        const markerIndex = entry.markerId.split('::')[1];
+        const marker = L.marker(getPoiDisplayPosition(`paint:${entry.scheme.id}:${markerIndex}`, anchorPositions.get(entry.markerId)), {
             icon: schemeIcon(entry.scheme),
             title: `${entry.scheme.name} paint scheme · ${entry.location.name}`
         });

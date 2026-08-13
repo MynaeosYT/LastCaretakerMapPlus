@@ -2,6 +2,7 @@ import L from 'leaflet';
 import questData from './data/quests.json';
 import eventData from './data/world_events.json';
 import { isRelatedLocationVisible, LOCATION_VISIBILITY_EVENT } from './location-visibility.js';
+import { getPoiDisplayPosition } from './poi-layout.js';
 
 const STATUS_KEY = 'tlc-quest-status-v1';
 const FILTER_KEY = 'tlc-quest-filters-v1';
@@ -72,7 +73,7 @@ export function initQuests(map) {
     const eventIcon = (locked) => L.divIcon({
         className: 'world-event-marker-wrapper',
         html: `<div class="world-event-marker${locked ? ' is-locked' : ''}"><span class="whale-glyph"></span></div>`,
-        iconSize: [38, 30], iconAnchor: [19, 25], popupAnchor: [0, -24]
+        iconSize: [44, 44], iconAnchor: [22, 36], popupAnchor: [0, -34]
     });
 
     function detailsHtml(quest) {
@@ -122,14 +123,14 @@ export function initQuests(map) {
     quests.forEach((quest) => {
         if (hasStartMarker(quest)) quest.startLocations.forEach((location, index) => {
             const key = `${quest.id}::start::${index}`;
-            const marker = L.marker([-location.latitude, location.longitude], { icon: questIcon(quest), title: `${quest.name} · Quest Start` });
+            const marker = L.marker(getPoiDisplayPosition(`quest-start:${quest.id}:${index}`, [-location.latitude, location.longitude]), { icon: questIcon(quest), title: `${quest.name} · Quest Start` });
             marker.bindPopup(() => questPopup(quest, location), { maxWidth: 430, maxHeight: 520 });
             marker.on('popupopen', () => wireQuestPopup(marker, quest));
             startMarkers.set(key, { marker, quest, location });
         });
         quest.objectiveLocations.forEach((location, index) => {
             const key = `${quest.id}::objective::${index}`;
-            const marker = L.marker([-location.latitude, location.longitude], { icon: questIcon(quest, true), title: `${quest.name} · Objective` });
+            const marker = L.marker(getPoiDisplayPosition(`quest-objective:${quest.id}:${index}`, [-location.latitude, location.longitude]), { icon: questIcon(quest, true), title: `${quest.name} · Objective` });
             marker.bindPopup(() => questPopup(quest, location, true), { maxWidth: 430, maxHeight: 520 });
             marker.on('popupopen', () => wireQuestPopup(marker, quest));
             objectiveMarkers.set(key, { marker, quest, location });
@@ -137,7 +138,11 @@ export function initQuests(map) {
     });
 
     events.forEach((event) => {
-        const marker = L.marker([-event.latitude, event.longitude], { icon: eventIcon(!isJonahComplete()), title: event.name });
+        const marker = L.marker(getPoiDisplayPosition(`event:${event.id}`, [-event.latitude, event.longitude]), {
+            icon: eventIcon(!isJonahComplete()),
+            title: event.name,
+            zIndexOffset: 800
+        });
         marker.bindPopup(() => eventPopup(event), { maxWidth: 400 });
         eventMarkers.set(event.id, { marker, event });
     });
