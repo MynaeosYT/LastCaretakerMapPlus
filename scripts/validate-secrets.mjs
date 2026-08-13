@@ -27,12 +27,18 @@ for (const [i, s] of (data.secrets ?? []).entries()) {
   if (!Array.isArray(s.sourceUrls) || s.sourceUrls.length === 0) errors.push(`${s.name}: sources are missing`);
 }
 
-const noTeddy = (data.secrets ?? []).find(s => s.id === "secret-transposium-no-teddy-inventory-door");
-if (!noTeddy || noTeddy.confidence !== "player-verified" || noTeddy.playerVerified !== true) {
-  errors.push("Transposium no-Teddy door must remain player-verified.");
+const teddyPassage = (data.secrets ?? []).find(s => s.id === "secret-transposium-no-teddy-inventory-door");
+if (!teddyPassage || teddyPassage.confidence !== "player-verified" || teddyPassage.playerVerified !== true) {
+  errors.push("Transposium Teddy theater passage must remain player-verified.");
 }
-if (!noTeddy?.accessConditions?.some(c => c.conditionType === "inventory_excludes")) {
-  errors.push("Transposium no-Teddy door requires inventory_excludes.");
+if (!teddyPassage?.accessConditions?.some(c => c.conditionType === "inventory_excludes")) {
+  errors.push("Transposium Teddy theater passage requires inventory_excludes.");
+}
+if (!teddyPassage?.accessConditions?.some(c => c.conditionType === "object_state")) {
+  errors.push("Transposium Teddy theater passage requires object_state.");
+}
+if ((data.secrets ?? []).some(s => s.id === "secret-transposium-teddy-theater-passage")) {
+  errors.push("The duplicate Transposium Teddy theater passage record must not be restored.");
 }
 
 const gamma1 = (data.secrets ?? []).find(s => s.id === "secret-gamma-tommy-room");

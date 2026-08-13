@@ -1,6 +1,6 @@
 # Secret Catalog
 
-Last reviewed: **2026-08-07**
+Last reviewed: **2026-08-13**
 
 - Records: **26**
 - Records with documented access: **22**
@@ -33,8 +33,7 @@ Last reviewed: **2026-08-07**
 | The Fourth Chamber – statue vault | The Fourth Chamber | environmental_puzzle | confirmed | accessible |
 | Last Listener – submerged foundation room | The Last Listener Station | hidden_underwater_room | community-confirmed | accessible |
 | Secret of the Maze | The Maze (Transposium) | multi_trigger_puzzle | confirmed | accessible |
-| Transposium – no-Teddy inventory door | The Maze (Transposium) | item_gate | player-verified | accessible |
-| Transposium – Teddy theater passage | The Maze (Transposium) | conditional_door | confirmed | accessible |
+| Transposium – Teddy theater passage | The Maze (Transposium) | conditional_door | player-verified | accessible |
 | Transposium – Teddy-required door | The Maze (Transposium) | item_gate | confirmed | accessible |
 
 ## Details
@@ -334,30 +333,20 @@ Last reviewed: **2026-08-07**
   - Players report cases where all three lights are green but the secret door remains closed.
   - The trigger objects can become non-interactive, making recovery difficult; save/reload does not always fix it.
 
-### Transposium – no-Teddy inventory door
-
-- **POI:** The Maze (Transposium) (`111:22`; poi)
-- **Type:** item_gate
-- **Confidence:** player-verified
-- **Status:** accessible
-- **Hint:** For this door, carrying a familiar keepsake is the problem rather than the solution.
-- **Solution:** Approach without a Teddy Bear in the inventory. The user has a gameplay recording from their first season showing this behavior; a separate Steam discussion independently states that Transposium doors can require 'a teddy or no teddy', but the public source does not identify this exact door as clearly.
-- **Conditions:**
-  - `inventory_excludes` – No Teddy Bear in inventory.
-- **Notes:**
-  - Exact room/door number should be added from the user's recording when convenient.
-  - External evidence supports the general teddy/no-teddy mechanic; the exact negative inventory condition is player-verified.
-
 ### Transposium – Teddy theater passage
 
 - **POI:** The Maze (Transposium) (`111:22`; poi)
 - **Type:** conditional_door
-- **Confidence:** confirmed
+- **Confidence:** player-verified
 - **Status:** accessible
-- **Hint:** The room reacts to where the teddy bears are left, not simply to a button.
-- **Solution:** After teddy bears appear in the theater room, remove them from the theater and place them in the caretaker-bot room. Once all are out of the theater, the next door stays open.
+- **Hint:** The theater passage reacts to where the teddy bears are left. Carrying one through the door is part of the problem rather than the solution.
+- **Solution:** Remove the teddy bears from the theater, place them in the caretaker-bot room, and approach the passage without a Teddy Bear in your inventory. Once the theater is clear, the next door stays open.
 - **Conditions:**
+  - `inventory_excludes` – No Teddy Bear in inventory.
   - `object_state` – Remove all spawned Teddy Bears from the theater room.
+- **Notes:**
+  - This combines the former no-Teddy and theater-passage records because they describe the same door.
+  - The negative inventory condition is player-verified.
 - **Known issues:**
   - Some players report teddy/door sequences failing to spawn or update correctly after saves; reloads may be required.
 
@@ -372,4 +361,4 @@ Last reviewed: **2026-08-07**
 - **Conditions:**
   - `inventory_contains` – Teddy Bear must be carried.
 - **Notes:**
-  - Do not conflate this with the separate no-Teddy condition reported elsewhere in the maze.
+  - Do not conflate this Teddy-required door with the separate Teddy theater passage.

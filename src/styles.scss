@@ -1110,9 +1110,10 @@ header p {
 .quest-marker.is-objective span { font-size: 19px; }
 .quest-marker.is-active { background: #1470a7; }
 .quest-marker.is-completed { background: #2d7650; opacity: .62; }
-.world-event-marker { width: 36px; height: 28px; display: grid; place-items: center; border: 2px solid #b8f4f8; border-radius: 8px; background: #14636e; color: #d9fbff; box-shadow: 0 2px 6px #000; }
+.world-event-marker { width: 44px; height: 44px; display: grid; place-items: center; color: #8ce8f0; filter: drop-shadow(0 2px 2px #000) drop-shadow(0 0 1px #000); }
 .world-event-marker.is-locked { filter: grayscale(.75); opacity: .58; }
-.whale-glyph { display: block; width: 28px; height: 20px; background: currentColor; -webkit-mask: url('./assets/whale.svg') center / contain no-repeat; mask: url('./assets/whale.svg') center / contain no-repeat; }
+.whale-glyph { display: block; width: 42px; height: 42px; background: currentColor; -webkit-mask: url('/images/TheLastCaretaker_Indicator_Whale.PNG') center / contain no-repeat; mask: url('/images/TheLastCaretaker_Indicator_Whale.PNG') center / contain no-repeat; }
+#world-event-list .quest-list-glyph .whale-glyph { width: 24px; height: 24px; }
 .quest-status-label { display: flex; align-items: center; gap: 8px; margin: 9px 0; font-weight: 700; }
 .quest-status-label select { padding: 4px; }
 .quest-popup details, .world-event-popup details { margin-top: 9px; padding: 7px; border: 1px solid #c9c9c9; border-radius: 5px; }
@@ -1261,8 +1262,8 @@ header p {
 .map-legend .quest-marker .quest-start-glyph { transform: none; }
 .map-legend .quest-marker.is-objective { width: 21px; height: 21px; }
 .map-legend .quest-marker.is-objective span { transform: none; }
-.map-legend .world-event-marker { width: 30px; height: 24px; border-width: 1px; box-shadow: none; }
-.map-legend .world-event-marker .whale-glyph { width: 24px; height: 17px; }
+.map-legend .world-event-marker { width: 30px; height: 30px; filter: none; }
+.map-legend .world-event-marker .whale-glyph { width: 28px; height: 28px; }
 .map-legend .secret-marker { width: 25px; height: 28px; border-width: 1px; box-shadow: none; }
 .map-legend .secret-marker .keyhole-glyph { width: 16px; height: 20px; }
 .legend-precision { justify-self: center; width: 25px; height: 25px; border: 2px solid #b7c7c0; border-radius: 6px; background: #26302c; }

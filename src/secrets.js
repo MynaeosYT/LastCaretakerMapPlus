@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import secretData from './data/secrets.json';
 import { isRelatedLocationVisible, LOCATION_VISIBILITY_EVENT } from './location-visibility.js';
+import { getPoiDisplayPosition } from './poi-layout.js';
 
 const STATUS_KEY = 'tlc-secret-status-v1';
 const REVEAL_KEY = 'tlc-secret-reveal-v1';
@@ -122,7 +123,7 @@ export function initSecrets(map) {
     }
 
     secrets.forEach((secret) => {
-        const marker = L.marker(positions.get(secret.id), { icon: icon(secret), title: `${secret.name} · Secret` });
+        const marker = L.marker(getPoiDisplayPosition(`secret:${secret.id}`, positions.get(secret.id)), { icon: icon(secret), title: `${secret.name} · Secret` });
         marker.bindPopup(() => popupHtml(secret), { maxWidth: 440, maxHeight: 540 }); marker.on('popupopen', () => wirePopup(secret, marker)); markers.set(secret.id, marker);
     });
 

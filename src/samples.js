@@ -1,6 +1,7 @@
 import L from 'leaflet';
 import sampleData from './data/samples.json';
 import { isRelatedLocationVisible, LOCATION_VISIBILITY_EVENT } from './location-visibility.js';
+import { getPoiDisplayPosition } from './poi-layout.js';
 
 const STATUS_KEY = 'tlc-sample-status-v1';
 const FILTER_KEY = 'tlc-sample-filters-v1';
@@ -158,7 +159,7 @@ export function initSamples(map) {
     }
 
     samples.forEach((sample) => {
-        const marker = L.marker(displayPositions.get(sample.id), {
+        const marker = L.marker(getPoiDisplayPosition(`sample:${sample.id}`, displayPositions.get(sample.id)), {
             icon: createIcon(sample),
             title: `Sample #${sample.sampleId}: ${sample.name}`
         });
