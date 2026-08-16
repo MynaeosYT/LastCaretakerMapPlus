@@ -49,6 +49,29 @@ for (const [category, expected] of Object.entries(expectedCounts)) {
   }
 }
 
+const bySampleId = new Map((data.samples ?? []).map((sample) => [sample.sampleId, sample]));
+const sample046 = bySampleId.get("046");
+if (sample046?.coordinatePrecision !== "poi" || sample046?.longitude !== 69 || sample046?.latitude !== -78) {
+  errors.push("Sample 046 must use the Habitat Node 01-2.5 POI anchor at 69:-78.");
+}
+
+const sample051 = bySampleId.get("051");
+if (sample051?.name !== "Closed Door" || sample051?.locationName !== "Seed Reserve 01" || sample051?.longitude !== 60 || sample051?.latitude !== 11 || sample051?.underwater !== true) {
+  errors.push("Sample 051 must remain named Closed Door and assigned to the underwater Seed Reserve 01 POI at 60:11.");
+}
+
+const sample124 = bySampleId.get("124");
+if (sample124?.underwater !== true || !sample124?.positionNote?.toLocaleLowerCase().includes("human seed")) {
+  errors.push("Sample 124 must identify the underwater Seed Reserve and the Human Seed insertion shown by the Holo.");
+}
+
+const sample647 = bySampleId.get("647");
+if (sample647?.underwater !== true) errors.push("Sample 647 must remain marked as underwater.");
+
+for (const sample of (data.samples ?? []).filter((entry) => /grave/i.test(entry.locationName))) {
+  if (sample.underwater !== true) errors.push(`Sample ${sample.sampleId} at ${sample.locationName} must remain marked as underwater.`);
+}
+
 if (errors.length) {
   console.error("Validation failed:\n- " + errors.join("\n- "));
   process.exit(1);

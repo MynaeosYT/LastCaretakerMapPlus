@@ -1,6 +1,6 @@
-# Sample-Katalog
+# Sample Catalog
 
-Last reviewed: 2026-08-06 · 104 records
+Last reviewed: 2026-08-16 · 104 records
 
 | ID | Name | Category | Location / map anchor | Coordinates | Precision |
 |---:|---|---|---|---:|---|
@@ -23,9 +23,9 @@ Last reviewed: 2026-08-06 · 104 records
 | 042 | Signal Flag | Holo Memories | Habitat Node 14-7 / Kartenname: Habitat Node 21-7 | `105:50` | poi |
 | 043 | Passing Boat | Holo Memories | Habitat Node 06-3.5 | `24:4` | poi |
 | 045 | Final Cast | Holo Memories | Habitat Node 10-4 | `31:-31` | poi |
-| 046 | Dead Signal | Holo Memories | Habitat Node 01-2.5 | `68:-78` | exact |
+| 046 | Dead Signal | Holo Memories | Habitat Node 01-2.5 | `69:-78` | poi |
 | 050 | Retrieval | Holo Memories | Seed Vault Prometheus | `82:-65` | poi |
-| 051 | UNBEKANNT – Sample 051 | Holo Memories | Habitat Node 09-4 | `83:16` | poi |
+| 051 | Closed Door | Holo Memories | Seed Reserve 01 | `60:11` | poi |
 | 052 | Inventory | Holo Memories | Eden Cradle / Seed Eden | `167:34` | poi |
 | 053 | Warm Shaft | Holo Memories | MCV-17 Dead Breath | `74:-74` | poi |
 | 054 | Earthfire | Holo Memories | MCV-12 Eternal Flame | `89:47` | poi |
