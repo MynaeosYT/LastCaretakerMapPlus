@@ -36,13 +36,12 @@ The community dataset contains **104 sample IDs**:
 
 ### Important sample notes
 
-#### Samples 051 and 059
+#### Sample 059
 
-The English in-game names could not be verified reliably from the available text
-sources. They intentionally remain `UNKNOWN – Sample 051` and
-`UNKNOWN – Sample 059` instead of using guessed names.
+The English in-game name could not be verified reliably from the available text
+sources. It intentionally remains `UNKNOWN – Sample 059` instead of using a
+guessed name.
 
-- 051 uses the Habitat Node 09-4 POI anchor at `83:16`.
 - 059 has a published coordinate at `64.9:-3.9` and therefore remains `exact`.
 
 #### Sample 575

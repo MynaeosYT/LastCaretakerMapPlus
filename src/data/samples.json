@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "game": "The Last Caretaker",
-  "generatedAt": "2026-08-06",
+  "generatedAt": "2026-08-16",
   "datasetStatus": "community-compiled",
   "sampleCount": 104,
   "categoryCounts": {
@@ -390,11 +390,11 @@
       "name": "Dead Signal",
       "category": "holo_memory",
       "locationName": "Habitat Node 01-2.5",
-      "longitude": 68.0,
+      "longitude": 69.0,
       "latitude": -78.0,
-      "coordinatePrecision": "exact",
+      "coordinatePrecision": "poi",
       "status": "community-confirmed",
-      "positionNote": "Northwest of the northern silo, in the upper part of the habitat complex.",
+      "positionNote": "On the top platform of Habitat Node 01-2.5.",
       "underwater": false,
       "depthMeters": null,
       "aliases": [],
@@ -425,15 +425,15 @@
     {
       "id": "sample-051",
       "sampleId": "051",
-      "name": "UNKNOWN – Sample 051",
+      "name": "Closed Door",
       "category": "holo_memory",
-      "locationName": "Habitat Node 09-4",
-      "longitude": 83.0,
-      "latitude": 16.0,
+      "locationName": "Seed Reserve 01",
+      "longitude": 60.0,
+      "latitude": 11.0,
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
-      "positionNote": "Community-reported find at Habitat Node 09-4. The available sources do not document the English in-game sample name.",
-      "underwater": false,
+      "positionNote": "Inside Seed Reserve 01.",
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -622,7 +622,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Brighton Grave; one of two Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -641,7 +641,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Brighton Grave; one of two Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -660,7 +660,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Winston Grave; one of three Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -679,7 +679,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Winston Grave; one of three Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -698,7 +698,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -717,7 +717,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -736,7 +736,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -755,7 +755,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Lincoln Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -774,7 +774,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Hampton Grave.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -793,7 +793,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Dover Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -812,7 +812,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Salem Grave.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -831,7 +831,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Dover Grave; spelling follows the community list. Check for a possible spelling variant in game.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [
         "Roofline Argument"
@@ -852,7 +852,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Dover Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -871,7 +871,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Dover Grave; one of four Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -890,7 +890,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At Winston Grave; one of three Holo Memory finds.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -1022,8 +1022,8 @@
       "latitude": -67.0,
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
-      "positionNote": "In front of a seed chamber at Seed Reserve 11.",
-      "underwater": false,
+      "positionNote": "Inside the underwater Seed Reserve 11 capsule. The Holo shows a person standing before one of the wall-mounted human-seed chambers and inserting a Human Seed.",
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
@@ -1824,7 +1824,7 @@
       "coordinatePrecision": "poi",
       "status": "community-confirmed",
       "positionNote": "At the Spire of Industry.",
-      "underwater": false,
+      "underwater": true,
       "depthMeters": null,
       "aliases": [],
       "sourceRefs": [
