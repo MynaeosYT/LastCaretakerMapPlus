@@ -657,7 +657,7 @@
                 "gameid": "GrowthContainer12"
               },
               {
-                "name": "NDNs Node -70,-2",
+                "name": "NDNS Node -70, -2",
                 "id": "h21",
                 "description": "NDNS Node -70, -2 is a NDNS Node.",
                 "longitude": -70,
@@ -667,7 +667,7 @@
                 "gameid": "GrowthContainer13"
               },
               {
-                "name": "NDNs Node 70,-142",
+                "name": "NDNS Node 70, -142",
                 "id": "h22",
                 "description": "NDNS Node 70, -142 is a NDNS Node.",
                 "longitude": 70,
@@ -677,7 +677,7 @@
                 "gameid": "GrowthContainer14"
               },
               {
-                "name": "NDNs Node 70,138",
+                "name": "NDNS Node 70, 138",
                 "id": "h23",
                 "description": "NDNS Node 70, 138 is a NDNS Node.",
                 "longitude": 70,
@@ -687,7 +687,7 @@
                 "gameid": "GrowthContainer15"
               },
               {
-                "name": "NDNs Node 210.-2",
+                "name": "NDNS Node 210, -2",
                 "id": "h24",
                 "description": "NDNS Node 210, -2 is a NDNS Node.",
                 "longitude": 210,
