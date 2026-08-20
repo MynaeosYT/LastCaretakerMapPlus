@@ -24,7 +24,53 @@ for (const [i, s] of (data.secrets ?? []).entries()) {
   if (!allowedPrecision.has(s.coordinatePrecision)) errors.push(`${s.name}: invalid precision`);
   if (!s.hint || !s.solution) errors.push(`${s.name}: hint/solution is missing`);
   if (!Array.isArray(s.accessConditions)) errors.push(`${s.name}: accessConditions is missing`);
-  if (!Array.isArray(s.sourceUrls) || s.sourceUrls.length === 0) errors.push(`${s.name}: sources are missing`);
+  if (!Array.isArray(s.sourceUrls)) errors.push(`${s.name}: sourceUrls is missing`);
+  if (s.sourceUrls?.length === 0 && !(s.confidence === "player-verified" && s.playerVerified === true
+      && s.notes?.includes("Directly verified in-game by the map author on 2026-08-20."))) {
+    errors.push(`${s.name}: empty sourceUrls requires dated direct in-game verification`);
+  }
+}
+
+const countBy = (field) => Object.fromEntries((data.secrets ?? []).reduce((counts, secret) => {
+  counts.set(secret[field], (counts.get(secret[field]) ?? 0) + 1);
+  return counts;
+}, new Map()));
+const statusCounts = countBy("status");
+const confidenceCounts = countBy("confidence");
+const typeCounts = countBy("secretType");
+const countsMatch = (declared, actual) => {
+  const keys = new Set([...Object.keys(declared ?? {}), ...Object.keys(actual)]);
+  return [...keys].every((key) => declared?.[key] === actual[key]);
+};
+
+if (data.solvedOrAccessibleCount !== statusCounts.accessible) errors.push("solvedOrAccessibleCount does not match accessible records.");
+if (data.detailsIncompleteCount !== statusCounts.details_incomplete) errors.push("detailsIncompleteCount does not match incomplete records.");
+if (!countsMatch(data.confidenceCounts, confidenceCounts)) errors.push("confidenceCounts does not match the records.");
+if (!countsMatch(data.typeCounts, typeCounts)) errors.push("typeCounts does not match the records.");
+
+const verified20260820 = [
+  "secret-habitat-node-04-7-update-3-5-hidden-additions",
+  "secret-habitat-node-05-14-5-update-3-5-hidden-additions",
+  "secret-refuel-outpost-theta-outer-underwater-room",
+  "secret-habitat-node-09-4-upper-support-room",
+  "secret-habitat-node-09-4-deep-support-room",
+  "secret-exodus-station-support-vent-hidden-chamber"
+];
+for (const id of verified20260820) {
+  const secret = (data.secrets ?? []).find((entry) => entry.id === id);
+  if (!secret || secret.status !== "accessible" || secret.confidence !== "player-verified" || secret.playerVerified !== true
+      || !secret.notes?.some((note) => note.startsWith("Directly verified in-game by the map author on 2026-08-20."))) {
+    errors.push(`${id} must remain accessible and directly player-verified on 2026-08-20.`);
+  }
+}
+
+const expectedIncompleteIds = [
+  "secret-helios-reserve-gemini-update-3-5-secret-area",
+  "secret-nomads-tower-update-3-5-secret-area"
+];
+const incompleteIds = (data.secrets ?? []).filter((secret) => secret.status === "details_incomplete").map((secret) => secret.id).sort();
+if (JSON.stringify(incompleteIds) !== JSON.stringify(expectedIncompleteIds.sort())) {
+  errors.push("Only the Helios Reserve Gemini and Nomads Tower research leads may remain incomplete.");
 }
 
 const teddyPassage = (data.secrets ?? []).find(s => s.id === "secret-transposium-no-teddy-inventory-door");

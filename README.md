@@ -11,6 +11,11 @@ This is an unofficial fan project for
 [Channel37](https://www.channel37.co/). It is not affiliated with or endorsed by
 Channel37.
 
+> **Maintenance status:** This repository remains online as the stable legacy
+> map and reference dataset. After the final verified data refresh, future
+> *The Last Caretaker* data development continues in the successor website
+> project.
+
 ## Screenshots
 
 ![Default desktop map view](docs/images/map-overview.png)

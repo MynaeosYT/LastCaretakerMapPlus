@@ -1,10 +1,10 @@
 # Secret Catalog
 
-Last reviewed: **2026-08-13**
+Last reviewed: **2026-08-20**
 
-- Records: **26**
-- Records with documented access: **22**
-- Officially known areas represented as research leads: **4**
+- Records: **29**
+- Records with documented access: **27**
+- Officially known areas represented as research leads: **2**
 
 ## Overview
 
@@ -12,8 +12,11 @@ Last reviewed: **2026-08-13**
 |---|---|---|---|---|
 | Black Vein Station – secret camera room | Black Vein Station | hidden_underwater_room | community-confirmed | accessible |
 | Central Warehouse Alpha – hidden map room | Central Warehouse Alpha | hidden_room | confirmed | accessible |
-| Habitat Node 04-7 – Update 3.5 hidden additions | Habitat Node 04-7 | details_incomplete | official-location-only | details_incomplete |
-| Habitat Node 05-14.5 – Update 3.5 hidden additions | Habitat Node 05-14.5 | details_incomplete | official-location-only | details_incomplete |
+| Habitat Node 04-7 – hidden support container | Habitat Node 04-7 | hidden_underwater_room | player-verified | accessible |
+| Habitat Node 05-14.5 – hidden support room | Habitat Node 05-14.5 | hidden_underwater_room | player-verified | accessible |
+| Habitat Node 09-4 – upper support room | Habitat Node 09-4 | hidden_underwater_room | player-verified | accessible |
+| Habitat Node 09-4 – deep support room | Habitat Node 09-4 | hidden_underwater_room | player-verified | accessible |
+| Exodus Station – support vent hidden chamber | Exodus Station | hidden_room | player-verified | accessible |
 | Helios Reserve Gemini – Update 3.5 secret area | Helios Reserve Gemini | details_incomplete | official-location-only | details_incomplete |
 | Helios Reserve Lyra – 116 m power gate | Helios Reserve Lyra | power_gate | confirmed | accessible |
 | Helios Reserve Lyra – 66 m power gate | Helios Reserve Lyra | power_gate | confirmed | accessible |
@@ -26,6 +29,7 @@ Last reviewed: **2026-08-13**
 | Gamma – second underwater secret room | Refuel Outpost Gamma | hidden_button | confirmed | accessible |
 | Gamma – Tommy Room | Refuel Outpost Gamma | item_gate | confirmed | accessible |
 | Refuel Outpost Theta – hidden oil room | Refuel Outpost Theta | hidden_underwater_room | community-confirmed | accessible |
+| Refuel Outpost Theta – outer underwater room | Refuel Outpost Theta | hidden_underwater_room | player-verified | accessible |
 | Mother Under the Sea | Sanctuary Dock 37 | hidden_landmark | confirmed | accessible |
 | Sanctuary Dock 37 – ceiling catwalks | Sanctuary Dock 37 | hidden_path | confirmed | accessible |
 | Sanctuary Dock 37 – outside-access grate loot | Sanctuary Dock 37 | hidden_path | community-confirmed | accessible |
@@ -63,28 +67,79 @@ Last reviewed: **2026-08-13**
   - `security_level` – Reach the security-gated upper office; community reports describe this as Security Clearance 3 / roughly character level 15.
   - `movable_shelf` – Pull the yellow/orange handle on the wall storage unit.
 
-### Habitat Node 04-7 – Update 3.5 hidden additions
+### Habitat Node 04-7 – hidden support container
 
 - **POI:** Habitat Node 04-7 (`82:-15`; poi)
-- **Type:** details_incomplete
-- **Confidence:** official-location-only
-- **Status:** details_incomplete
-- **Hint:** Channel37 explicitly listed this POI among the locations receiving new rooms, caves, vents, secrets or hidden areas in Update 3.5.
-- **Solution:** The available sources do not document the exact access route. This entry is listed as a research lead.
+- **Type:** hidden_underwater_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** The habitat's single support carries a small container that is easy to overlook from above.
+- **Solution:** Dive beneath Habitat Node 04-7 and inspect its single support structure. A small container attached to the support can be entered from underneath through an underwater opening.
+- **Conditions:**
+  - `underwater_entry` – Swim beneath the habitat and enter the small container attached to its single support from below.
 - **Notes:**
-  - Excluded from solved-secret progress because the entrance or access condition is not documented.
+  - Directly verified in-game by the map author on 2026-08-20. The room had already been looted during an earlier visit, so its original contents could not be reliably documented.
 
-### Habitat Node 05-14.5 – Update 3.5 hidden additions
+### Habitat Node 05-14.5 – hidden support room
 
 - **POI:** Habitat Node 05-14.5 (`90:-56`; poi)
-- **Type:** details_incomplete
-- **Confidence:** official-location-only
-- **Status:** details_incomplete
-- **Hint:** Channel37 explicitly listed this POI among the locations receiving new rooms, caves, vents, secrets or hidden areas in Update 3.5.
-- **Solution:** The available sources do not document the exact access route. This entry is listed as a research lead.
+- **Type:** hidden_underwater_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** One of the habitat supports hides more than structural space. Search beneath the platform.
+- **Solution:** Dive below Habitat Node 05-14.5 and inspect the support structures from underneath. One of the supports contains an underwater entrance into a small hidden room.
+- **Contents:** A few resources, recyclable items and memories.
+- **Conditions:**
+  - `underwater_entry` – Enter the hidden room from below through one of the platform supports.
 - **Notes:**
-  - Excluded from solved-secret progress because the entrance or access condition is not documented.
-  - Steam players reported two interesting underwater structures and a newly changed section just above the waterline, but exact intended secret routing remains incomplete.
+  - Directly verified in-game by the map author on 2026-08-20.
+
+### Habitat Node 09-4 – upper support room
+
+- **POI:** Habitat Node 09-4 (`83:16`; poi)
+- **Type:** hidden_underwater_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** One of two hidden support rooms can be reached relatively close below the surface.
+- **Solution:** Dive beneath Habitat Node 09-4 and search the support structure for an underwater entrance at roughly 30 m depth.
+- **Contents:** Memories and recyclable items.
+- **Conditions:**
+  - `underwater_entry` – Enter the support structure from below.
+  - `depth` – The entrance is approximately 30 m deep; the observed depth is only accurate to roughly ±5 m.
+- **Notes:**
+  - Directly verified in-game by the map author on 2026-08-20.
+
+### Habitat Node 09-4 – deep support room
+
+- **POI:** Habitat Node 09-4 (`83:16`; poi)
+- **Type:** hidden_underwater_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** The second hidden support room lies much deeper beneath the habitat.
+- **Solution:** Dive far below Habitat Node 09-4 and search the support structure for another underwater entrance at roughly 130 m depth.
+- **Contents:** Memories and recyclable items.
+- **Conditions:**
+  - `underwater_entry` – Enter the support structure from below.
+  - `deep_dive` – The entrance is approximately 130 m deep; the observed depth is only accurate to roughly ±5 m.
+- **Notes:**
+  - Directly verified in-game by the map author on 2026-08-20.
+
+### Exodus Station – support vent hidden chamber
+
+- **POI:** Exodus Station (`126:48`; poi)
+- **Type:** hidden_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** The launch-control building has more beneath it than the obvious power-connection room. Look below the platform and pay attention to the support structure.
+- **Solution:** Use the stairs beside the launch-control building to reach the area beneath the platform, where the building's power-connection room is located. From there, climb along the platform support structure to reach a ventilation shaft. The shaft leads into a hidden room. Behind metal panels inside that area is another concealed door leading deeper into the secret.
+- **Contents:** The first hidden area contains memories and recyclable items. Behind a concealed door is a red-lit chamber with several Caretakers hanging from hooks in the ceiling.
+- **Conditions:**
+  - `under_platform_access` – Use the stairs beside the launch-control building to reach the lower platform structure.
+  - `climbing_route` – Climb across the support structure from the power-connection area to the ventilation shaft.
+  - `hidden_door` – Search behind the metal panels in the first hidden room for the concealed inner door.
+- **Notes:**
+  - Directly verified in-game by the map author on 2026-08-20.
+  - Launch-control building is a descriptive label, not a claimed official in-game building name.
 
 ### Helios Reserve Gemini – Update 3.5 secret area
 
@@ -235,6 +290,20 @@ Last reviewed: **2026-08-13**
   - `fuel_cable` – A long fuel-cable route is useful to extract the oil.
 - **Known issues:**
   - Community specifically warns against grenades/flamethrower around the oil room.
+
+### Refuel Outpost Theta – outer underwater room
+
+- **POI:** Refuel Outpost Theta (`85:-45`; poi)
+- **Type:** hidden_underwater_room
+- **Confidence:** player-verified
+- **Status:** accessible
+- **Hint:** The large oil room is not the only hidden space beneath Theta. Search closer to the outer edge of the platform.
+- **Solution:** Dive beneath Refuel Outpost Theta and inspect the outer edge of the platform. A separate underwater access leads into a small hidden room.
+- **Contents:** A small hidden room containing recyclable items and memories.
+- **Conditions:**
+  - `underwater_entry` – Search beneath the outer edge of the platform for the underwater entrance.
+- **Notes:**
+  - Directly verified in-game by the map author on 2026-08-20.
 
 ### Mother Under the Sea
 
