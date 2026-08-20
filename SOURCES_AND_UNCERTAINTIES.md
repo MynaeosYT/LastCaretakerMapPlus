@@ -148,22 +148,25 @@ Keep IDs stable and run `npm run validate:quests` after changes.
 
 ## Secrets, hidden rooms, and gated areas
 
-Last reviewed: **August 7, 2026**
+Last reviewed: **August 20, 2026**
 
-The dataset contains 25 separate secret/gate records: 21 with documented access
-and four deliberately incomplete research leads. A detailed overview is stored
+The dataset contains 29 separate secret/gate records: 27 with documented access
+and two deliberately incomplete research leads. A detailed overview is stored
 in `src/data/SECRET_CATALOG.md`; structured data exists only in
 `src/data/secrets.json`.
 
 POI coordinates are search-area anchors, not claimed exact doors or walls.
 Solutions are hidden behind deliberate reveal actions in the interface. The
-The Transposium Teddy theater passage combines the theater puzzle and the
+Transposium Teddy theater passage combines the theater puzzle and the
 player-verified no-Teddy inventory condition because they affect the same door.
 The separate Teddy-required door remains its own record.
 
-Research leads at Nomads Tower, Helios Reserve Gemini, Habitat Node 05-14.5, and
-Habitat Node 04-7 contain no invented solution and do not count toward the
-21-secret completion total. Mod- or noclip-only areas are excluded.
+The remaining research leads at Nomads Tower and Helios Reserve Gemini contain
+no invented solution and do not count toward the 27-secret completion total.
+Habitat Nodes 04-7 and 05-14.5, the two Habitat Node 09-4 rooms, the outer room
+at Refuel Outpost Theta, and the Exodus Station route were directly verified
+in game by the map author on August 20, 2026. Mod- or noclip-only areas are
+excluded.
 
 Keep secret IDs stable, do not promote incomplete records without reliable
 evidence, and run `npm run validate:secrets` after changes.

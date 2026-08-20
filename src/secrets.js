@@ -142,7 +142,8 @@ export function initSecrets(map) {
 
     function renderControls() {
         const accessible = secrets.filter((secret) => secret.status === 'accessible');
-        controls.innerHTML = `<div class="secret-control-title"><strong>Secrets</strong><span>Found ${accessible.filter((secret) => userState(secret) !== 'unknown').length}/${accessible.length} · Solved ${accessible.filter((secret) => userState(secret) === 'solved').length}/${accessible.length} · Research leads 4</span></div>
+        const researchCount = secrets.filter((secret) => secret.status === 'details_incomplete').length;
+        controls.innerHTML = `<div class="secret-control-title"><strong>Secrets</strong><span>Found ${accessible.filter((secret) => userState(secret) !== 'unknown').length}/${accessible.length} · Solved ${accessible.filter((secret) => userState(secret) === 'solved').length}/${accessible.length} · Research leads ${researchCount}</span></div>
             <div class="secret-filters"><label><input type="checkbox" data-secret-filter="showSecrets" ${filters.showSecrets ? 'checked' : ''}>Show secrets</label><label><input type="checkbox" data-secret-filter="unsolvedOnly" ${filters.unsolvedOnly ? 'checked' : ''}>Only unsolved</label><label><input type="checkbox" data-secret-filter="showResearch" ${filters.showResearch ? 'checked' : ''}>Show research leads</label></div>`;
         controls.querySelectorAll('[data-secret-filter]').forEach((input) => input.addEventListener('change', () => { filters[input.dataset.secretFilter] = input.checked; saveFilters(); refresh(); }));
     }
